@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario recibido — Nina Alvarez Tatar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:       #3a7232;
+    --green-dark:  #2d5e28;
+    --green-light: #5e9454;
+    --bg:          #f5f1ea;
+    --bg-alt:      #eceae0;
+    --white:       #ffffff;
+    --text:        #1e2e1c;
+    --text-soft:   #3a4e36;
+    --text-muted:  #5a7254;
+    --border:      rgba(60,100,50,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 100% 80% at 50% 40%, rgba(94,148,84,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 10% 90%, rgba(58,114,50,0.05) 0%, transparent 50%);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: relative; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    padding: 28px 40px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(245,241,234,0.96);
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--green);
+  }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 28px;
+    position: relative; z-index: 1;
+  }
+
+  .thanks-card {
+    max-width: 600px; width: 100%;
+    text-align: center;
+    position: relative;
+  }
+
+  .bg-leaf {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; opacity: 0.04;
+    pointer-events: none; z-index: 0;
+  }
+
+  .card-inner { position: relative; z-index: 1; }
+
+  /* Check icon */
+  .check-wrap {
+    width: 72px; height: 72px; border-radius: 50%;
+    border: 2px solid rgba(58,114,50,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 36px; position: relative;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(58,114,50,0.12);
+    animation: pulse-ring 2.5s ease-out infinite;
+  }
+  .check-wrap::before {
+    content: '';
+    position: absolute; inset: -10px; border-radius: 50%;
+    border: 1px solid rgba(58,114,50,0.1);
+    animation: pulse-ring 2.5s ease-out infinite 0.4s;
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.95); opacity: 0.8; }
+    50%  { transform: scale(1.02); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+  }
+  .check-icon { color: var(--green); font-size: 30px; line-height: 1; }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--green-light); margin-bottom: 20px; display: block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 700; line-height: 1.1;
+    color: var(--text); margin-bottom: 10px;
+  }
+  h1 em { color: var(--green); font-style: italic; font-weight: 600; display: inline; }
+
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-style: italic; font-weight: 400;
+    color: var(--text-muted); margin-bottom: 40px; line-height: 1.5;
+  }
+
+  .ornament {
+    display: flex; align-items: center; gap: 16px;
+    justify-content: center; margin-bottom: 40px;
+  }
+  .ornament::before, .ornament::after {
+    content: ''; flex: 1; max-width: 80px;
+    height: 1px; background: rgba(60,100,50,0.2);
+  }
+  .ornament span { font-size: 10px; color: var(--green-light); letter-spacing: 3px; }
+
+  /* Message box */
+  .message-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 32px 36px; margin-bottom: 28px;
+    text-align: left;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .message-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--green-light); margin-bottom: 14px; display: block;
+  }
+  .message-text { font-size: 16px; color: var(--text-soft); line-height: 1.85; }
+  .message-text strong { color: var(--text); font-weight: 600; }
+
+  /* WA preview */
+  .wa-preview {
+    background: #f0f7ee;
+    border: 1px solid rgba(58,114,50,0.15);
+    padding: 18px 22px; margin-bottom: 24px;
+    text-align: left; position: relative;
+  }
+  .wa-preview::before {
+    content: 'Mensaje pre-definido';
+    font-family: 'DM Mono', monospace;
+    font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--green-light); display: block; margin-bottom: 10px;
+  }
+  .wa-preview-bubble {
+    display: inline-block;
+    background: rgba(37,211,102,0.08);
+    border: 1px solid rgba(37,211,102,0.2);
+    padding: 12px 16px;
+    font-size: 14px; color: var(--text-soft);
+    font-style: italic; line-height: 1.65;
+    border-radius: 0 12px 12px 12px;
+  }
+
+  /* WA Button */
+  .wa-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--green); color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 18px 40px; text-decoration: none;
+    transition: all 0.3s ease; margin-bottom: 14px;
+    width: 100%; justify-content: center;
+  }
+  .wa-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(58,114,50,0.25); }
+  .wa-icon { font-size: 20px; }
+
+  .disclaimer { font-size: 13px; color: var(--text-muted); line-height: 1.8; margin-top: 6px; }
+
+  /* Video slots */
+  .videos-row { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 16px; }
+  .video-slot { background: #000; border: 1px solid rgba(60,100,50,0.15); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  @media (max-width: 600px) { .videos-row { grid-template-columns: 1fr; } }
+  .next-steps {
+    margin-top: 56px;
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+  }
+  .steps-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 28px; display: block; text-align: center;
+  }
+  .steps-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; text-align: left; }
+  .step-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 24px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: box-shadow 0.3s;
+  }
+  .step-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .step-n { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--green-light); margin-bottom: 10px; display: block; }
+  .step-t { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .step-b { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* Footer */
+  footer {
+    background: #1e2e1c;
+    border-top: 1px solid rgba(60,100,50,0.2);
+    padding: 28px 40px; text-align: center;
+    position: relative; z-index: 1;
+  }
+  .footer-note { font-size: 12px; color: #5a7a54; line-height: 1.8; max-width: 500px; margin: 0 auto; }
+
+  /* Animations */
+  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease forwards; }
+  @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+  .delay-5 { animation-delay: 0.75s; }
+
+  @media (max-width: 600px) {
+    .steps-list { grid-template-columns: 1fr; }
+    nav { padding: 22px 20px; }
+    .message-box { padding: 24px 20px; }
+    h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Nina Alvarez Tatar · Reset Metabólico</span>
+</nav>
+
+<main>
+  <div class="thanks-card">
+
+    <!-- Leaf deco -->
+    <svg class="bg-leaf" viewBox="0 0 400 400" fill="none">
+      <path d="M200 20 C280 60 380 150 360 280 C340 380 220 400 140 360 C60 320 20 200 60 120 C100 40 160 10 200 20Z" fill="#2d4a2d"/>
+      <path d="M200 20 L200 400" stroke="#4a6741" stroke-width="3"/>
+      <path d="M120 100 C160 120 200 100 240 120" stroke="#4a6741" stroke-width="2" opacity="0.7"/>
+      <path d="M100 160 C150 180 200 160 260 180" stroke="#4a6741" stroke-width="2" opacity="0.6"/>
+      <path d="M100 220 C155 240 200 220 265 240" stroke="#4a6741" stroke-width="2" opacity="0.5"/>
+      <path d="M110 280 C158 298 200 280 260 298" stroke="#4a6741" stroke-width="2" opacity="0.4"/>
+    </svg>
+
+    <div class="card-inner">
+
+      <!-- Check -->
+      <div class="check-wrap fade-in">
+        <span class="check-icon">✓</span>
+      </div>
+
+      <!-- Headline -->
+      <span class="tag fade-in delay-1">Formulario recibido</span>
+      <h1 class="fade-in delay-1">Tu perfil fue <em>registrado.</em></h1>
+      <p class="subtitle fade-in delay-2">El primer paso ya está dado.</p>
+
+      <div class="ornament fade-in delay-2"><span>✦</span></div>
+
+      <!-- Message -->
+      <div class="message-box fade-in delay-3">
+        <span class="message-label">Próximo paso</span>
+        <p class="message-text">
+          Para <strong>agilizar tu agenda</strong> y que Nina pueda revisar tu caso personalmente,
+          hacé clic en el botón de abajo para enviarnos un mensaje directo por WhatsApp.
+          <br><br>
+          Nina atiende personalmente cada consulta. Los cupos para el programa son <strong>limitados</strong>.
+        </p>
+      </div>
+
+      <!-- WA preview -->
+      <div class="wa-preview fade-in delay-3">
+        <div class="wa-preview-bubble">
+          "Hola Nina, completé mi perfil para el Reset Metabólico. Quedo a disposición para coordinar una llamada."
+        </div>
+      </div>
+
+      <!-- WA Button -->
+      <!--
+        REEMPLAZÁ TUNUMERO con el número de WhatsApp de Nina (con código de país, sin +):
+        Ej: 5491123456789
+      -->
+      <a href="https://wa.me/5492616013554?text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quedo%20a%20disposici%C3%B3n%20para%20coordinar%20una%20llamada."
+         class="wa-btn fade-in delay-4" target="_blank">
+        <span class="wa-icon">💬</span>
+        Escribir a Nina por WhatsApp
+      </a>
+
+      <p class="disclaimer fade-in delay-4">Al hacer clic, se abrirá WhatsApp con el mensaje pre-cargado.<br>Solo tenés que enviarlo.</p>
+
+      <!-- Next steps -->
+      <div class="next-steps fade-in delay-5">
+        <span class="steps-title">Lo que dicen quienes ya lo hicieron</span>
+        <div class="videos-row">
+          <div class="video-slot">
+            <div style="padding:177.78% 0 0 0;position:relative;">
+              <iframe src="https://player.vimeo.com/video/1189455574?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Testimonio Germán"></iframe>
+            </div>
+          </div>
+          <div class="video-slot">
+            <div style="padding:177.78% 0 0 0;position:relative;">
+              <iframe src="https://player.vimeo.com/video/1189457629?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Testimonio Juan José"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <span class="steps-title" style="margin-top:48px">¿Qué pasa ahora?</span>
+        <div class="steps-list">
+          <div class="step-item">
+            <span class="step-n">01 ·</span>
+            <div class="step-t">Contacto inicial</div>
+            <p class="step-b">Contactate por WhatsApp haciendo clic en el botón de arriba para agendar tu llamada.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-n">02 ·</span>
+            <div class="step-t">Sesión de Diagnóstico</div>
+            <p class="step-b">Una llamada de evaluación personalizada para entender tu caso en profundidad.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-n">03 ·</span>
+            <div class="step-t">Tu protocolo</div>
+            <p class="step-b">Si hay fit, comenzamos el Reset Metabólico diseñado específicamente para vos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="footer-note">Este programa no reemplaza el tratamiento médico convencional. Los resultados individuales pueden variar. Consultá siempre con tu médico tratante antes de iniciar cualquier protocolo nutricional o de cambio de hábitos.</p>
+</footer>
+
+</body>
+</html>
