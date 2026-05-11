@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gracias por tu interés — Nina Alvarez Tatar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2371726409991744');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+  :root {
+    --green:       #3a7232;
+    --green-dark:  #2d5e28;
+    --green-light: #5e9454;
+    --bg:          #f5f1ea;
+    --bg-alt:      #eceae0;
+    --white:       #ffffff;
+    --text:        #1e2e1c;
+    --text-soft:   #3a4e36;
+    --text-muted:  #5a7254;
+    --border:      rgba(60,100,50,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 100% 80% at 50% 30%, rgba(94,148,84,0.06) 0%, transparent 60%);
+  }
+
+  /* NAV */
+  nav {
+    position: relative; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(245,241,234,0.96);
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--green);
+  }
+
+  /* MAIN */
+  main {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 28px 80px;
+    position: relative; z-index: 1;
+  }
+
+  .card {
+    max-width: 580px; width: 100%;
+    text-align: center;
+  }
+
+  /* HEART ICON */
+  .icon-wrap {
+    width: 72px; height: 72px; border-radius: 50%;
+    border: 2px solid rgba(58,114,50,0.25);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 32px;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(58,114,50,0.1);
+    font-size: 30px;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--green-light); margin-bottom: 16px; display: block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700; line-height: 1.1;
+    color: var(--text); margin-bottom: 28px;
+  }
+  h1 em { color: var(--green); font-style: italic; font-weight: 600; }
+
+  /* MESSAGE BOX */
+  .message-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 32px 36px;
+    margin-bottom: 36px;
+    text-align: left;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .message-text {
+    font-size: 16px; color: var(--text-soft);
+    line-height: 1.9;
+  }
+  .message-text strong { color: var(--text); font-weight: 600; }
+
+  /* DIVIDER */
+  .ornament {
+    display: flex; align-items: center; gap: 16px;
+    margin: 36px 0;
+  }
+  .ornament::before, .ornament::after {
+    content: ''; flex: 1;
+    height: 1px; background: rgba(60,100,50,0.2);
+  }
+  .ornament span { font-size: 10px; color: var(--green-light); letter-spacing: 3px; }
+
+  /* FREE CONTENT */
+  .free-content {
+    margin-bottom: 36px;
+  }
+  .free-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 20px; display: block;
+  }
+  .tips-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 32px; }
+  .tip-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 20px 16px; text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .tip-icon { font-size: 22px; margin-bottom: 10px; display: block; }
+  .tip-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* INSTAGRAM BUTTON */
+  .ig-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--green); color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 18px 40px; text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%; justify-content: center;
+  }
+  .ig-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(58,114,50,0.25); }
+  .ig-icon { font-size: 20px; }
+  .ig-disclaimer {
+    font-size: 13px; color: var(--text-muted);
+    margin-top: 12px; line-height: 1.7;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1e2e1c;
+    border-top: 1px solid rgba(60,100,50,0.2);
+    padding: 28px 40px; text-align: center;
+    position: relative; z-index: 1;
+  }
+  .footer-note { font-size: 12px; color: #5a7a54; line-height: 1.8; max-width: 500px; margin: 0 auto; }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease forwards; }
+  @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.25s; }
+  .d3 { animation-delay: 0.4s; }
+  .d4 { animation-delay: 0.55s; }
+  .d5 { animation-delay: 0.7s; }
+
+  @media (max-width: 600px) {
+    nav { padding: 20px; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .message-box { padding: 24px 20px; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Lic. Nina Alvarez Tatar · Reset Metabólico</span>
+</nav>
+
+<main>
+  <div class="card">
+
+    <div class="icon-wrap fade-in d1">🌿</div>
+
+    <span class="tag fade-in d1">Gracias por tu tiempo</span>
+    <h1 class="fade-in d2">Valoramos que hayas<em> dado este paso.</em></h1>
+
+    <div class="message-box fade-in d3">
+      <p class="message-text">
+        Valoramos mucho que hayas completado el formulario. El programa Reset Metabólico es una inversión importante y entendemos que no siempre es el momento indicado.
+        <br><br>
+        Mientras tanto, <strong>Nina comparte herramientas y consejos gratuitos en Instagram</strong> que pueden ayudarte a dar los primeros pasos hacia una mejor salud metabólica — sin costo y desde hoy.
+      </p>
+    </div>
+
+    <div class="ornament fade-in d3"><span>✦</span></div>
+
+    <div class="free-content fade-in d4">
+      <span class="free-label">Lo que vas a encontrar en Instagram</span>
+      <div class="tips-grid">
+        <div class="tip-item">
+          <span class="tip-icon">🍽️</span>
+          <p class="tip-text">Consejos de alimentación para regular el azúcar en sangre</p>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">⚡</span>
+          <p class="tip-text">Estrategias para recuperar energía y mejorar el sueño</p>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">📊</span>
+          <p class="tip-text">Información real sobre metabolismo y diabetes tipo 2</p>
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com/lic_ninaevolutiva/" class="ig-btn" target="_blank">
+        <span class="ig-icon">📸</span>
+        Seguir a Nina en Instagram
+      </a>
+      <p class="ig-disclaimer">Contenido gratuito todas las semanas. Cuando el momento llegue, acá vamos a estar.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p class="footer-note">Este programa no reemplaza el tratamiento médico convencional. Los resultados individuales pueden variar. Consultá siempre con tu médico tratante antes de iniciar cualquier protocolo nutricional o de cambio de hábitos.</p>
+</footer>
+
+</body>
+</html>
