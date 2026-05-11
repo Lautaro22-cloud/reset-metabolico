@@ -802,6 +802,16 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       return;
     }
 
+    // Capturar UTMs de la URL
+    const params = new URLSearchParams(window.location.search);
+    const utms = {
+      utm_source:   params.get('utm_source')   || 'directo',
+      utm_medium:   params.get('utm_medium')   || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content:  params.get('utm_content')  || '',
+      utm_term:     params.get('utm_term')     || ''
+    };
+
     // Recopilar datos
     const data = {
       nombre:   document.querySelector('input[name="nombre"]').value.trim(),
@@ -811,7 +821,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       q2: document.querySelector('input[name="q2"]:checked').value,
       q3: document.querySelector('input[name="q3"]:checked').value,
       q4: document.querySelector('input[name="q4"]:checked').value,
-      fecha: new Date().toLocaleString('es-AR')
+      fecha: new Date().toLocaleString('es-AR'),
+      ...utms
     };
 
     // Cambiar texto del botón mientras envía
