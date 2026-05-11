@@ -645,7 +645,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <label class="opt"><input type="radio" name="q1" value="dueno"> Soy dueño/a de un negocio o comercio</label>
           <label class="opt"><input type="radio" name="q1" value="directivo"> Soy gerente, directivo o jefe en una empresa</label>
           <label class="opt"><input type="radio" name="q1" value="profesional"> Soy profesional independiente o empleado activo</label>
-          <label class="opt"><input type="radio" name="q1" value="otro"> Otra situación</label>
         </div>
       </div>
 
@@ -674,12 +673,14 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
       <div class="form-step">
         <span class="step-tag">Pregunta 04 / 04</span>
-        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿Estás en condiciones de invertir en tu salud para lograr un cambio real?</div>
+        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q4" value="si"> Sí, estoy listo/a para comprometer tiempo y recursos</label>
-          <label class="opt"><input type="radio" name="q4" value="info"> Quiero saber más antes de decidir</label>
+          <label class="opt"><input type="radio" name="q4" value="1300-1700"> De USD 1.300 a USD 1.700</label>
+          <label class="opt"><input type="radio" name="q4" value="1000-1300"> De USD 1.000 a USD 1.300</label>
+          <label class="opt"><input type="radio" name="q4" value="600-1000"> De USD 600 a USD 1.000</label>
+          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
         </div>
-        <p class="form-footnote">* El costo del programa se informa en la llamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
+        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
       </div>
 
       <div class="form-cta">
@@ -729,7 +730,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
   // ─── REEMPLAZÁ ESTA URL con la de tu Google Apps Script desplegado ───
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxl9RN8WnGDzXXIA6CeQIvG5fQFvecleJQsdbXbLpBDdgTFhGhma3_Td_J0B7jdFAg/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzN8wxicqV684yBECQPLhqlMWi_JTkrylp9OwTkXL7BUFruH4KkH4Oh58ZixkGBMXkH/exec';
 
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
@@ -812,6 +813,10 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       utm_term:     params.get('utm_term')     || ''
     };
 
+    // Verificar si descalifica
+    const q4val = document.querySelector('input[name="q4"]:checked').value;
+    const descalifica = q4val === 'no';
+
     // Recopilar datos
     const data = {
       nombre:   document.querySelector('input[name="nombre"]').value.trim(),
@@ -820,7 +825,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       q1: document.querySelector('input[name="q1"]:checked').value,
       q2: document.querySelector('input[name="q2"]:checked').value,
       q3: document.querySelector('input[name="q3"]:checked').value,
-      q4: document.querySelector('input[name="q4"]:checked').value,
+      q4: q4val,
       fecha: new Date().toLocaleString('es-AR'),
       ...utms
     };
@@ -840,11 +845,11 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     })
     .then(() => {
       fbq('track', 'Lead');
-      window.location.href = '/gracias.html';
+      window.location.href = descalifica ? '/no-califica.html' : '/gracias.html';
     })
     .catch(() => {
       fbq('track', 'Lead');
-      window.location.href = '/gracias.html';
+      window.location.href = descalifica ? '/no-califica.html' : '/gracias.html';
     });
   });
 </script>
