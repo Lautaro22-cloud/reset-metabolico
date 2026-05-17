@@ -245,6 +245,29 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .vsl-cta { text-align: center; margin-top: 32px; }
   .vsl-cta .btn-primary { background: #ffffff; color: #3a7232; }
   .vsl-cta .btn-primary:hover { background: #f0ece4; }
+  .sound-btn {
+    position: absolute; bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(0,0,0,0.75);
+    color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    cursor: pointer; z-index: 10;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    animation: pulse-sound 2s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  .sound-btn:hover { background: rgba(58,114,50,0.9); border-color: rgba(255,255,255,0.6); }
+  .sound-btn.hidden { opacity: 0; pointer-events: none; }
+  .sound-icon { font-size: 18px; }
+  @keyframes pulse-sound {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.04); }
+  }
 
   /* ── TICKER ── */
   .ticker {
@@ -522,12 +545,16 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="vsl-wrap">
       <iframe
         id="vsl-main"
-        src="https://player.vimeo.com/video/1181246993?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=vsl-main&app_id=58479"
+        src="https://player.vimeo.com/video/1181246993?title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1&player_id=vsl-main&app_id=58479"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         style="position:absolute;top:0;left:0;width:100%;height:100%;"
         title="NINA_VSL_ABRIL">
       </iframe>
+      <div class="sound-btn" id="sound-btn" onclick="activateSound()">
+        <span class="sound-icon">🔇</span>
+        <span class="sound-text">Activar sonido</span>
+      </div>
     </div>
     <p class="vsl-caption">En este video Nina te explica exactamente cómo personas con diabetes tipo 2 normalizaron sus glucemias sin cambiar su medicación en las primeras semanas.</p>
     <div class="vsl-cta">
@@ -811,7 +838,16 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  // Autoplay VSL al hacer scroll
+  // Activar sonido del VSL
+  function activateSound() {
+    const vslPlayer = new Vimeo.Player(document.getElementById('vsl-main'));
+    vslPlayer.setVolume(1);
+    vslPlayer.setMuted(false);
+    const btn = document.getElementById('sound-btn');
+    btn.classList.add('hidden');
+  }
+
+  // Autoplay VSL al hacer scroll (muted para cumplir política del navegador)
   let vslPlayed = false;
   const vslSection = document.querySelector('.sec-vsl');
   const vslObs = new IntersectionObserver(entries => {
