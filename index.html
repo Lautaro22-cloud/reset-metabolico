@@ -224,6 +224,17 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     background: linear-gradient(to right, transparent, rgba(107,143,94,0.25), transparent);
   }
 
+  /* ── VSL ── */
+  .sec-vsl { padding: 60px 0; background: #1e2e1c; }
+  .vsl-wrap {
+    position: relative;
+    padding-top: 56.25%;
+    max-width: 860px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .vsl-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
   /* ── TICKER ── */
   .ticker {
     background: var(--forest);
@@ -370,6 +381,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .field-input { background: #f5f9f4; border: 1px solid rgba(60,100,50,0.2); color: #1e2e1c; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 400; padding: 14px 16px; outline: none; transition: border-color 0.25s; width: 100%; }
   .field-input::placeholder { color: #8aaa84; }
   .field-input:focus { border-color: rgba(58,114,50,0.5); }
+  .field-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a7254' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
   @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
 
   /* Error states */
@@ -492,6 +504,22 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <span class="ticker-item">Individualización radical</span>
   </div>
 </div>
+
+<!-- VSL -->
+<section class="sec-vsl">
+  <div class="container">
+    <div class="vsl-wrap">
+      <iframe
+        id="vsl-main"
+        src="https://player.vimeo.com/video/1181246993?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=0&player_id=vsl-main&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        title="NINA_VSL_ABRIL">
+      </iframe>
+    </div>
+  </div>
+</section>
 
 <!-- CONFLICTO -->
 <section class="sec-conflict">
@@ -635,11 +663,42 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
             <label class="field-label">Número de celular</label>
             <input type="tel" name="celular" class="field-input" placeholder="Ej: +54 9 11 1234-5678">
           </div>
+          <div class="field-group">
+            <label class="field-label">Email</label>
+            <input type="email" name="email" class="field-input" placeholder="tu@email.com">
+          </div>
         </div>
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 01 / 04</span>
+        <span class="step-tag">Pregunta 01 / 05</span>
+        <div class="step-q">¿Cuál es tu profesión u ocupación?</div>
+        <div class="field-group">
+          <select name="profesion" class="field-input field-select">
+            <option value="" disabled selected>Seleccioná una opción</option>
+            <option value="abogado">Abogado/a</option>
+            <option value="contador">Contador/a</option>
+            <option value="ingeniero">Ingeniero/a</option>
+            <option value="arquitecto">Arquitecto/a</option>
+            <option value="medico">Médico/a</option>
+            <option value="odontologo">Odontólogo/a</option>
+            <option value="farmaceutico">Farmacéutico/a</option>
+            <option value="psicologo">Psicólogo/a</option>
+            <option value="economista">Economista</option>
+            <option value="administrador">Licenciado/a en Administración</option>
+            <option value="marketing">Licenciado/a en Marketing</option>
+            <option value="sistemas">Analista / Ingeniero en Sistemas</option>
+            <option value="veterinario">Veterinario/a</option>
+            <option value="kinesiologo">Kinesiólogo/a</option>
+            <option value="nutricionista">Nutricionista</option>
+            <option value="dueno_negocio">Dueño/a de negocio o comercio</option>
+            <option value="otra">Otra profesión universitaria</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 02 / 05</span>
         <div class="step-q">¿Cuál de estas opciones describe mejor tu situación?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q1" value="dueno"> Soy dueño/a de un negocio o comercio</label>
@@ -649,7 +708,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 02 / 04</span>
+        <span class="step-tag">Pregunta 03 / 05</span>
         <div class="step-q">¿Cuál es tu situación de salud actual?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q2" value="t2"> Tengo Diabetes Tipo 2</label>
@@ -660,7 +719,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 03 / 04</span>
+        <span class="step-tag">Pregunta 04 / 05</span>
         <div class="step-q">¿Cuál es el síntoma que más te molesta hoy?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q3" value="energia"> Falta de energía — me canso rápido o me siento sin fuerza</label>
@@ -672,11 +731,11 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 04 / 04</span>
+        <span class="step-tag">Pregunta 05 / 05</span>
         <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q4" value="1300-1700"> De USD 1.300 a USD 1.700</label>
-          <label class="opt"><input type="radio" name="q4" value="1000-1300"> De USD 1.000 a USD 1.300</label>
+          <label class="opt"><input type="radio" name="q4" value="1000-1500"> De USD 1.000 a USD 1.500</label>
           <label class="opt"><input type="radio" name="q4" value="600-1000"> De USD 600 a USD 1.000</label>
           <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
         </div>
@@ -729,8 +788,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-  // ─── REEMPLAZÁ ESTA URL con la de tu Google Apps Script desplegado ───
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzN8wxicqV684yBECQPLhqlMWi_JTkrylp9OwTkXL7BUFruH4KkH4Oh58ZixkGBMXkH/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxFsMKHblo8ZPaSgqmIaHCjCuA96iiEmLfNF37O0nrhD7qTcMJEGA2U0pBezgcAdjY/exec';
 
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
@@ -738,7 +796,21 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  // Autoplay primer video al hacer scroll hasta la sección
+  // Autoplay VSL al hacer scroll
+  let vslPlayed = false;
+  const vslSection = document.querySelector('.sec-vsl');
+  const vslObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !vslPlayed) {
+        vslPlayed = true;
+        const vslPlayer = new Vimeo.Player(document.getElementById('vsl-main'));
+        vslPlayer.play();
+      }
+    });
+  }, { threshold: 0.3 });
+  if (vslSection) vslObs.observe(vslSection);
+
+  // Autoplay primer testimonio al hacer scroll
   let video1played = false;
   const video1section = document.getElementById('video-1');
   const scrollObs = new IntersectionObserver(entries => {
@@ -777,7 +849,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     let valid = true;
 
     // Validate text fields
-    ['nombre', 'apellido', 'celular'].forEach(name => {
+    ['nombre', 'apellido', 'celular', 'email'].forEach(name => {
       const input = document.querySelector(`input[name="${name}"]`);
       const step = input.closest('.form-step');
       if (!input.value.trim()) {
@@ -786,6 +858,14 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
         valid = false;
       }
     });
+
+    // Validate profession select
+    const profesion = document.querySelector('select[name="profesion"]');
+    if (!profesion.value) {
+      profesion.classList.add('input-error');
+      profesion.closest('.form-step').classList.add('step-error');
+      valid = false;
+    }
 
     // Validate radio groups
     ['q1', 'q2', 'q3', 'q4'].forEach(name => {
@@ -813,15 +893,17 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       utm_term:     params.get('utm_term')     || ''
     };
 
+    // Recopilar datos
     // Verificar si descalifica
     const q4val = document.querySelector('input[name="q4"]:checked').value;
     const descalifica = q4val === 'no';
 
-    // Recopilar datos
     const data = {
-      nombre:   document.querySelector('input[name="nombre"]').value.trim(),
-      apellido: document.querySelector('input[name="apellido"]').value.trim(),
-      celular:  document.querySelector('input[name="celular"]').value.trim(),
+      nombre:    document.querySelector('input[name="nombre"]').value.trim(),
+      apellido:  document.querySelector('input[name="apellido"]').value.trim(),
+      celular:   document.querySelector('input[name="celular"]').value.trim(),
+      email:     document.querySelector('input[name="email"]').value.trim(),
+      profesion: document.querySelector('select[name="profesion"]').value,
       q1: document.querySelector('input[name="q1"]:checked').value,
       q2: document.querySelector('input[name="q2"]:checked').value,
       q3: document.querySelector('input[name="q3"]:checked').value,
