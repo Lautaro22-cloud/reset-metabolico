@@ -298,18 +298,55 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
 
     <div class="steps-box">
       <span class="steps-box-title">¿Cómo hacerlo? Son 3 pasos simples</span>
-      <div class="step-row">
-        <span class="step-num">1</span>
-        <span class="step-text">Hacé clic en el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+
+      <!-- iOS instructions -->
+      <div id="steps-ios" style="display:none">
+        <div class="step-row">
+          <span class="step-num">1</span>
+          <span class="step-text">Hacé clic en el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">2</span>
+          <span class="step-text">Se va a abrir un cartel preguntando <strong>"¿Abrir en WA Business?"</strong> — tocá <strong>Abrir</strong>. Esto es normal, es solo una confirmación de tu celular</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">3</span>
+          <span class="step-text">Si aparecen dos opciones (<strong>Mensaje</strong> / <strong>WhatsApp Business</strong>), elegí <strong>WhatsApp Business</strong>. El mensaje ya está escrito — solo tocá <strong>Enviar</strong></span>
+        </div>
       </div>
-      <div class="step-row">
-        <span class="step-num">2</span>
-        <span class="step-text">Se va a abrir un cartel preguntando <strong>"¿Abrir en WA Business?"</strong> — tocá <strong>Abrir</strong>. Esto es normal, es solo una confirmación de tu celular</span>
+
+      <!-- Android instructions -->
+      <div id="steps-android" style="display:none">
+        <div class="step-row">
+          <span class="step-num">1</span>
+          <span class="step-text">Tocá el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">2</span>
+          <span class="step-text">Se va a abrir WhatsApp directamente. Si aparece un selector de apps, elegí <strong>WhatsApp Business</strong></span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">3</span>
+          <span class="step-text">El mensaje ya está escrito — solo tocá <strong>Enviar</strong> y listo. Nina te responde a la brevedad</span>
+        </div>
       </div>
-      <div class="step-row">
-        <span class="step-num">3</span>
-        <span class="step-text">Si aparecen dos opciones (<strong>Mensaje</strong> / <strong>WhatsApp Business</strong>), elegí <strong>WhatsApp Business</strong>. El mensaje ya está escrito — solo tocá <strong>Enviar</strong></span>
+
+      <!-- Fallback (desktop) -->
+      <div id="steps-default" style="display:none">
+        <div class="step-row">
+          <span class="step-num">1</span>
+          <span class="step-text">Hacé clic en el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">2</span>
+          <span class="step-text">Se va a abrir WhatsApp Web o la app de escritorio con el mensaje ya escrito</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">3</span>
+          <span class="step-text">Solo hacé clic en <strong>Enviar</strong> — Nina te responde a la brevedad para coordinar tu videollamada</span>
+        </div>
       </div>
+
     </div>
 
     <div class="reassurance">
@@ -357,6 +394,21 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
 <footer>
   <p class="footer-note">Este programa no reemplaza el tratamiento médico convencional. Los resultados individuales pueden variar. Consultá siempre con tu médico tratante antes de iniciar cualquier protocolo nutricional o de cambio de hábitos.</p>
 </footer>
+
+<script>
+  // Detectar sistema operativo y mostrar instrucciones correctas
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+  const isAndroid = /Android/i.test(ua);
+
+  if (isIOS) {
+    document.getElementById('steps-ios').style.display = 'block';
+  } else if (isAndroid) {
+    document.getElementById('steps-android').style.display = 'block';
+  } else {
+    document.getElementById('steps-default').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
