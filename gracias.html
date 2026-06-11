@@ -242,6 +242,39 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   .videos-row { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
   .video-slot { background: #000; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 
+  /* Video Nina */
+  .video-nina-section { margin-bottom: 8px; }
+  .video-nina-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 16px; display: block; text-align: center;
+  }
+  .video-nina-wrap {
+    position: relative;
+    max-width: 360px;
+    margin: 0 auto;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+  .sound-btn-nina {
+    position: absolute; bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(0,0,0,0.75); color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px; font-weight: 600; letter-spacing: 1px;
+    padding: 10px 22px; cursor: pointer; z-index: 10;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    animation: pulse-sound 2s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  .sound-btn-nina:hover { background: rgba(58,114,50,0.9); }
+  .sound-btn-nina.hidden { opacity: 0; pointer-events: none; }
+  @keyframes pulse-sound {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.04); }
+  }
+
   /* FOOTER */
   footer {
     background: #1e2e1c;
@@ -289,6 +322,30 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   </div>
 
   <div class="ornament fade-in d2"><span>✦</span></div>
+
+  <!-- VIDEO DE NINA -->
+  <div class="video-nina-section fade-in d3">
+    <span class="video-nina-label">Un mensaje de Nina para vos</span>
+    <div class="video-nina-wrap">
+      <div style="padding:177.82% 0 0 0;position:relative;">
+        <iframe
+          id="video-nina"
+          src="https://player.vimeo.com/video/1200586394?title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1&autoplay=1&player_id=video-nina&app_id=58479"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+          title="Video Nina">
+        </iframe>
+      </div>
+      <div class="sound-btn-nina" id="sound-btn-nina" onclick="activateSoundNina()">
+        <span>🔇</span>
+        <span>Activar sonido</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ornament fade-in d3"><span>✦</span></div>
 
   <!-- WHATSAPP -->
   <div class="wa-main fade-in d3">
@@ -395,12 +452,20 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   <p class="footer-note">Este programa no reemplaza el tratamiento médico convencional. Los resultados individuales pueden variar. Consultá siempre con tu médico tratante antes de iniciar cualquier protocolo nutricional o de cambio de hábitos.</p>
 </footer>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-  // Detectar sistema operativo y mostrar instrucciones correctas
+  // Activar sonido video Nina
+  function activateSoundNina() {
+    const player = new Vimeo.Player(document.getElementById('video-nina'));
+    player.setVolume(1);
+    player.setMuted(false);
+    document.getElementById('sound-btn-nina').classList.add('hidden');
+  }
+
+  // OS detection for WhatsApp instructions
   const ua = navigator.userAgent;
   const isIOS = /iPhone|iPad|iPod/i.test(ua);
   const isAndroid = /Android/i.test(ua);
-
   if (isIOS) {
     document.getElementById('steps-ios').style.display = 'block';
   } else if (isAndroid) {
