@@ -383,6 +383,14 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     width: 100%; height: 100%;
     border: none;
   }
+  .video-slot-wrap { display: flex; flex-direction: column; }
+  .testimonial-label {
+    background: #1e2e1c;
+    padding: 12px 16px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .testimonial-name { font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 600; color: #ffffff; }
+  .testimonial-role { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: #7aaa72; text-transform: uppercase; }
 
   .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
   .stat-box { background: #3a7232; padding: 32px 20px; text-align: center; transition: background 0.3s; }
@@ -395,6 +403,15 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .sec-form::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(94,148,84,0.05) 0%, transparent 65%); pointer-events: none; }
   .form-head { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
   .form-head p { font-size: 17px; color: #3a4e36; max-width: 500px; margin: 0 auto; font-weight: 400; }
+  .form-friction {
+    background: rgba(58,114,50,0.07);
+    border-left: 3px solid #3a7232;
+    padding: 16px 20px;
+    margin: 20px auto 24px;
+    max-width: 560px;
+    font-size: 15px; color: #2e4228;
+    line-height: 1.75; text-align: left;
+  }
   .form-wrap { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
   .form-step { background: #ffffff; border: 1px solid rgba(60,100,50,0.15); padding: 38px 36px; margin-bottom: 16px; transition: border-color 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
   .form-step:focus-within { border-color: rgba(58,114,50,0.45); }
@@ -495,7 +512,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="hero-grid">
       <div class="fade-up">
         <div class="hero-eyebrow">Programa 1 a 1 · Exclusivo</div>
-        <h1>Volvé a tener el control de tu energía,<em>tu cuerpo y tus decisiones.</em></h1>
+        <h1>Tomás decisiones críticas todos los días,<em>pero tu energía y tu cuerpo ya no están a la altura.</em></h1>
         <p class="hero-sub">Un programa 1 a 1 para empresarios, profesionales y líderes de alto rendimiento con diabetes tipo 2, prediabetes o sobrepeso que necesitan resultados reales sin perder tiempo en estrategias que no funcionan.</p>
         <p class="hero-sub2">Normalizá tus glucemias, bajá kilos de grasa aumentando masa muscular y recuperá tu energía, motivación y claridad mental sin soluciones genéricas y sin depender de medicación a largo plazo.</p>
         <a href="#diagnostico" class="btn btn-primary">Quiero saber más</a>
@@ -576,18 +593,18 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="pain-grid">
       <div class="pain-card fade-up" style="transition-delay:.1s">
         <span class="pain-icon">📊</span>
-        <div class="pain-title">Glucemias que no bajan</div>
-        <p class="pain-body">Te da miedo tomarte el azúcar a la mañana. Los números altos en el medidor te angustian. Sentís frustración, enojo y cansancio aunque "hiciste todo bien". Tu cuerpo está desregulado.</p>
+        <div class="pain-title">Neblina mental y fatiga</div>
+        <p class="pain-body">Perdés filo en las reuniones más importantes. Tardás más en procesar información, en reaccionar y en decidir. Sentís que ya no operás con la misma velocidad mental de antes.</p>
       </div>
       <div class="pain-card fade-up" style="transition-delay:.2s">
-        <span class="pain-icon">⚖️</span>
-        <div class="pain-title">El peso que no baja</div>
-        <p class="pain-body">Probaste de todo — dietas, caminatas, pastillas, inyecciones. Bajás un poco y después volvés a subir. Sentís que tu cuerpo no responde como antes.</p>
+        <span class="pain-icon">⚕️</span>
+        <div class="pain-title">El fracaso de la receta tradicional</div>
+        <p class="pain-body">Pastillas y dietas de fotocopia que son imposibles de sostener con tu ritmo de reuniones, viajes y responsabilidades. Hacés todo bien y los números no mejoran.</p>
       </div>
       <div class="pain-card fade-up" style="transition-delay:.3s">
-        <span class="pain-icon">🌙</span>
-        <div class="pain-title">El sueño roto</div>
-        <p class="pain-body">Te cuesta dormirte, te despertás varias veces en la noche, amanecés sin haber descansado. Te es agotador comenzar el día así.</p>
+        <span class="pain-icon">📉</span>
+        <div class="pain-title">Pérdida de vitalidad</div>
+        <p class="pain-body">Un metabolismo frenado que afecta tu confianza, tu físico y tu intimidad. Sentís que tu cuerpo ya no acompaña lo que tu mente todavía quiere lograr.</p>
       </div>
     </div>
   </div>
@@ -608,24 +625,24 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   <div class="container">
     <div class="fade-up">
       <div class="sec-label">La solución</div>
-      <div class="mech-statement">No es otra dieta más.<br><em>Es entender por qué tu cuerpo dejó de responder.</em></div>
+      <div class="mech-statement">No es otra dieta de cajón.<br><em>Es una intervención metabólica diseñada para agendas colapsadas.</em></div>
       <p class="mech-intro">El programa Reset Metabólico de la Lic. Nina Alvarez Tatar trabaja la causa raíz — reordena tu reloj biológico y tu metabolismo en tu contexto real. Porque bajar de peso y/o regular tus glucemias de forma definitiva requieren un plan hecho para vos y de forma integral, no para "el paciente promedio".</p>
     </div>
     <div class="pillars">
       <div class="pillar fade-up" style="transition-delay:.1s">
         <span class="pillar-num">01 ·</span>
-        <div class="pillar-title">Tu caso, tu plan</div>
-        <p class="pillar-body">Ningún plan es igual para todos. Buscamos la causa real de por qué tu cuerpo acumula grasa o no regula el azúcar, y armamos un protocolo para vos.</p>
+        <div class="pillar-title">Biología aplicada a tu rutina</div>
+        <p class="pillar-body">No te pedimos que frenes tu vida. Adaptamos la estrategia a tus horarios, no al revés. Tu agenda es el punto de partida, no el obstáculo.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.2s">
         <span class="pillar-num">02 ·</span>
-        <div class="pillar-title">Comés bien, te movés adecuadamente, dormís mejor</div>
-        <p class="pillar-body">Ajustamos qué y cuándo comés, optimizamos el entrenamiento para que tu cuerpo recupere el ritmo natural — más energía de día, mejor descanso de noche.</p>
+        <div class="pillar-title">Recuperación cognitiva</div>
+        <p class="pillar-body">Revertimos la fatiga desde la raíz para que vuelvas a operar con rapidez y foco. Claridad mental para tomar decisiones como antes.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.3s">
         <span class="pillar-num">03 ·</span>
-        <div class="pillar-title">Resultados que se ven y se sienten</div>
-        <p class="pillar-body">Menos glucosa, menos kilos de grasa, más músculo, más energía. Todo con seguimiento en tus análisis de laboratorio para que veas el cambio con números reales.</p>
+        <div class="pillar-title">Acompañamiento de alto nivel</div>
+        <p class="pillar-body">Seguimiento directo y sin vueltas. Medimos datos reales — laboratorios, glucemias, composición corporal — para darte resultados, no suposiciones.</p>
       </div>
     </div>
   </div>
@@ -643,25 +660,37 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     </div>
 
     <div class="videos-grid fade-up" style="transition-delay:.1s">
-      <div class="video-slot" id="video-1">
-        <iframe
-          id="vimeo-1"
-          src="https://player.vimeo.com/video/1189383571?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=vimeo-1&app_id=58479"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-          referrerpolicy="strict-origin-when-cross-origin"
-          title="Testimonio Claudio">
-        </iframe>
+      <div class="video-slot-wrap">
+        <div class="video-slot" id="video-1">
+          <iframe
+            id="vimeo-1"
+            src="https://player.vimeo.com/video/1189383571?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=vimeo-1&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Testimonio Claudio">
+          </iframe>
+        </div>
+        <div class="testimonial-label">
+          <span class="testimonial-name">Claudio M.</span>
+          <span class="testimonial-role">CEO · Empresa de Logística</span>
+        </div>
       </div>
-      <div class="video-slot" id="video-2">
-        <iframe
-          id="vimeo-2"
-          src="https://player.vimeo.com/video/1189385674?title=0&byline=0&portrait=0&badge=0&autopause=1&player_id=vimeo-2&app_id=58479"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-          referrerpolicy="strict-origin-when-cross-origin"
-          title="Testimonio Mario">
-        </iframe>
+      <div class="video-slot-wrap">
+        <div class="video-slot" id="video-2">
+          <iframe
+            id="vimeo-2"
+            src="https://player.vimeo.com/video/1189385674?title=0&byline=0&portrait=0&badge=0&autopause=1&player_id=vimeo-2&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Testimonio Mario">
+          </iframe>
+        </div>
+        <div class="testimonial-label">
+          <span class="testimonial-name">Mario S.</span>
+          <span class="testimonial-role">Director Comercial · Industria Manufacturera</span>
+        </div>
       </div>
     </div>
 
@@ -682,7 +711,11 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="form-head fade-up">
       <div class="sec-label" style="justify-content:center">Pre-calificación</div>
       <h2>Completá tu perfil<br><em>en pocos pasos.</em></h2>
+      <div class="form-friction">
+        <strong>Nota:</strong> El Reset Metabólico es una intervención de alta inversión económica y de compromiso personal. Completá este diagnóstico solo si estás decidido a priorizar tu rendimiento, tu salud y tu bienestar esta misma semana. Evaluamos cada perfil antes de habilitar el acceso a la agenda.
+      </div>
       <p>Este breve formulario permite que Nina revise tu caso personalmente y reserve tu Sesión de Diagnóstico Gratuita Inicial.</p>
+    </div>
     </div>
 
     <div class="form-wrap fade-up" style="transition-delay:.1s">
@@ -713,7 +746,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 01 / 05</span>
+        <span class="step-tag">Pregunta 01 / 06</span>
         <div class="step-q">¿Cuál es tu profesión u ocupación?</div>
         <div class="field-group">
           <select name="profesion" class="field-input field-select">
@@ -740,7 +773,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 02 / 05</span>
+        <span class="step-tag">Pregunta 02 / 06</span>
         <div class="step-q">¿Cuál de estas opciones describe mejor tu situación?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q1" value="dueno"> Soy dueño/a de un negocio o comercio</label>
@@ -750,7 +783,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 03 / 05</span>
+        <span class="step-tag">Pregunta 03 / 06</span>
         <div class="step-q">¿Cuál es tu situación de salud actual?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q2" value="t2"> Tengo Diabetes Tipo 2</label>
@@ -761,7 +794,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 04 / 05</span>
+        <span class="step-tag">Pregunta 04 / 06</span>
         <div class="step-q">¿Cuál es el síntoma que más te molesta hoy?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q3" value="energia"> Falta de energía — me canso rápido o me siento sin fuerza</label>
@@ -773,7 +806,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
 
       <div class="form-step">
-        <span class="step-tag">Pregunta 05 / 05</span>
+        <span class="step-tag">Pregunta 05 / 06</span>
         <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
         <div class="opts">
           <label class="opt"><input type="radio" name="q4" value="1300-1700"> De USD 1.300 a USD 1.700</label>
@@ -782,6 +815,15 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
         </div>
         <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 06 / 06</span>
+        <div class="step-q">Nuestra agenda es extremadamente limitada. Si te aprobamos el acceso al calendario, ¿te comprometés al 100% a asistir a la videollamada de diagnóstico?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5" value="si"> Sí, soy responsable y me comprometo a asistir</label>
+          <label class="opt"><input type="radio" name="q5" value="no"> No, no puedo asegurar asistir — por favor, no agendes</label>
+        </div>
       </div>
 
       <div class="form-cta">
@@ -808,11 +850,10 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   <div class="container">
     <div class="cta-inner fade-up">
       <span class="cta-pre">El primer paso es el más importante</span>
-      <h2 class="cta-h">Recuperá tu energía.<em>Recuperate vos.</em></h2>
+      <h2 class="cta-h">Tu empresa necesita tu mejor versión.<em>Volvé a liderar.</em></h2>
       <p class="cta-sub">Completá el formulario y Nina revisa tu caso personalmente para ver si el programa es para vos.</p>
       <div class="btn-group">
         <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Estratégico</a>
-        <a href="#diagnostico" class="btn btn-outline">Escribir por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -830,7 +871,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzBBLDOth-uPPA8dF_xJIr4dkHqYGoDBEuRpn_S5x1Rkdb93OkD0e4ewaj-63N0Geqx/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxFvfaiEgMQtT09mrxvhx5lUDfRa_Vv1PLPLOwUblMWsIPuILcvVSkVGGNBfUPFXfyAXQ/exec';
 
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
@@ -919,7 +960,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     }
 
     // Validate radio groups
-    ['q1', 'q2', 'q3', 'q4'].forEach(name => {
+    ['q1', 'q2', 'q3', 'q4', 'q5'].forEach(name => {
       const selected = document.querySelector(`input[name="${name}"]:checked`);
       const step = document.querySelector(`input[name="${name}"]`).closest('.form-step');
       if (!selected) {
@@ -947,7 +988,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     // Recopilar datos
     // Verificar si descalifica
     const q4val = document.querySelector('input[name="q4"]:checked').value;
-    const descalifica = q4val === 'no';
+    const q5val = document.querySelector('input[name="q5"]:checked').value;
+    const descalifica = q4val === 'no' || q5val === 'no';
 
     const data = {
       nombre:    document.querySelector('input[name="nombre"]').value.trim(),
@@ -959,6 +1001,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       q2: document.querySelector('input[name="q2"]:checked').value,
       q3: document.querySelector('input[name="q3"]:checked').value,
       q4: q4val,
+      q5: q5val,
       fecha: new Date().toLocaleString('es-AR'),
       ...utms
     };
