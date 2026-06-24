@@ -116,9 +116,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   }
   h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(34px, 5vw, 50px);
-    font-weight: 700; line-height: 1.1;
-    color: var(--text); margin-bottom: 16px;
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 700; line-height: 1.15;
+    color: var(--text); margin-bottom: 20px;
   }
   h1 em { color: var(--green); font-style: italic; font-weight: 600; }
   .page-intro {
@@ -203,9 +203,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   .reassurance strong { color: var(--text); }
 
   /* MESSAGE PREVIEW */
-  .message-preview {
-    margin: 24px 0 28px;
-  }
+  .message-preview { margin: 24px 0 20px; }
   .message-preview-label {
     font-family: 'DM Mono', monospace;
     font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
@@ -220,6 +218,14 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     font-style: italic; line-height: 1.7;
     border-radius: 0 14px 14px 14px;
     width: 100%;
+  }
+
+  /* RESPONSE TIME */
+  .response-time {
+    font-size: 13px; color: var(--text-muted);
+    text-align: center; margin-bottom: 16px;
+    line-height: 1.6;
+    font-style: italic;
   }
 
   /* WA BUTTON */
@@ -325,9 +331,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
       <span class="check-icon">✓</span>
     </div>
     <span class="tag fade-in d1">Perfil recibido</span>
-    <h1 class="fade-in d2">¡Gracias! Ya recibimos<em> tu información.</em></h1>
+    <h1 class="fade-in d2">Tu perfil califica para una<em> Sesión de Diagnóstico conmigo.</em></h1>
     <p class="page-intro fade-in d2">
-      Revisamos tu perfil y estamos listos para el siguiente paso. Para coordinar tu videollamada de diagnóstico, escribile directamente a Nina por WhatsApp.
+      En esa llamada vamos a evaluar juntos si el programa es la solución adecuada para tu caso. Para elegir tu horario, escribime por WhatsApp 👇
     </p>
   </div>
 
@@ -360,8 +366,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   <!-- WHATSAPP -->
   <div class="wa-main fade-in d3">
     <span class="wa-main-label">Siguiente paso</span>
-    <h2>La única forma de coordinar<em> es por WhatsApp.</em></h2>
-    <p>Nina atiende personalmente cada consulta. Para agendar tu videollamada de diagnóstico, escribile directamente — ella te va a responder para coordinar día y horario.</p>
+    <h2>Coordinamos por WhatsApp<em> — respondo personalmente.</em></h2>
+    <p>Atiendo cada consulta yo misma. Escribime por WhatsApp y te respondo para coordinar el día y horario de tu videollamada de diagnóstico.</p>
 
     <div class="steps-box">
       <span class="steps-box-title">¿Cómo hacerlo? Son 3 pasos simples</span>
@@ -370,7 +376,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
       <div id="steps-ios" style="display:none">
         <div class="step-row">
           <span class="step-num">1</span>
-          <span class="step-text">Hacé clic en el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+          <span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span>
         </div>
         <div class="step-row">
           <span class="step-num">2</span>
@@ -386,7 +392,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
       <div id="steps-android" style="display:none">
         <div class="step-row">
           <span class="step-num">1</span>
-          <span class="step-text">Tocá el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+          <span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span>
         </div>
         <div class="step-row">
           <span class="step-num">2</span>
@@ -402,7 +408,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
       <div id="steps-default" style="display:none">
         <div class="step-row">
           <span class="step-num">1</span>
-          <span class="step-text">Hacé clic en el botón verde <strong>"Escribir a Nina por WhatsApp"</strong> que está más abajo</span>
+          <span class="step-text">Hacé clic en el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span>
         </div>
         <div class="step-row">
           <span class="step-num">2</span>
@@ -417,21 +423,22 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     </div>
 
     <div class="reassurance">
-      <p>💡 <strong>¿Se abrió WhatsApp y saliste de esta página?</strong> No te preocupes, eso es normal. El mensaje ya fue enviado y Nina lo va a ver.</p>
-      <p>Si por algún motivo el mensaje no se envió, podés escribirle directamente al número <strong>+54 9 2616 01-3554</strong> con el texto: <em>"Hola Nina, completé mi perfil para el Reset Metabólico"</em></p>
+      <p>💡 <strong>¿Se abrió WhatsApp y saliste de esta página?</strong> Asegurate de haber enviado el mensaje antes de cerrar la app.</p>
     </div>
 
     <div class="message-preview">
       <span class="message-preview-label">Mensaje que se va a enviar</span>
       <div class="wa-bubble">
-        "Hola Nina, completé mi perfil para el Reset Metabólico. Quedo a disposición para coordinar una videollamada."
+        Hola Nina, completé mi perfil para el Reset Metabólico. Quiero saber si el programa es para mí, ¿cuándo podemos hablar?
       </div>
     </div>
 
+    <p class="response-time">Respondo personalmente — en general contesto dentro de las 2 horas siguientes en horario laboral.</p>
+
     <div class="wa-btn-wrap">
-      <a href="https://wa.me/5492616013554?text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quedo%20a%20disposici%C3%B3n%20para%20coordinar%20una%20videollamada."
+      <a href="https://wa.me/5492616013554?text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F"
          class="wa-btn" target="_blank"
-         onclick="fbq('track', 'Contact'); window.location='whatsapp://send?phone=5492616013554&text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quedo%20a%20disposici%C3%B3n%20para%20coordinar%20una%20videollamada.'; return false;">
+         onclick="fbq('track', 'Contact'); window.location='whatsapp://send?phone=5492616013554&text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F'; return false;">
         <span class="wa-icon">💬</span>
         Escribir a Nina por WhatsApp
       </a>
@@ -464,7 +471,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-  // Activar sonido video Nina
   function activateSoundNina() {
     const player = new Vimeo.Player(document.getElementById('video-nina'));
     player.setVolume(1);
@@ -472,7 +478,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     document.getElementById('sound-btn-nina').classList.add('hidden');
   }
 
-  // OS detection for WhatsApp instructions
   const ua = navigator.userAgent;
   const isIOS = /iPhone|iPad|iPod/i.test(ua);
   const isAndroid = /Android/i.test(ua);
