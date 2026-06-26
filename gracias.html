@@ -52,261 +52,79 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.75;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  body { background: var(--bg); color: var(--text); font-family: 'Jost', sans-serif; font-weight: 400; font-size: 17px; line-height: 1.75; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+  body::before { content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 100% 80% at 50% 30%, rgba(94,148,84,0.07) 0%, transparent 60%); }
 
-  body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(ellipse 100% 80% at 50% 30%, rgba(94,148,84,0.07) 0%, transparent 60%);
-  }
+  nav { position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; padding: 24px 40px; border-bottom: 1px solid var(--border); background: rgba(245,241,234,0.96); }
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--green); }
 
-  nav {
-    position: relative; z-index: 10;
-    display: flex; align-items: center; justify-content: center;
-    padding: 24px 40px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(245,241,234,0.96);
-  }
-  .nav-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
-    color: var(--green);
-  }
+  main { flex: 1; padding: 60px 28px 80px; position: relative; z-index: 1; max-width: 640px; margin: 0 auto; width: 100%; }
 
-  main {
-    flex: 1;
-    padding: 60px 28px 80px;
-    position: relative; z-index: 1;
-    max-width: 640px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  /* CHECK */
-  .check-wrap {
-    width: 72px; height: 72px; border-radius: 50%;
-    border: 2px solid rgba(58,114,50,0.3);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 28px;
-    background: var(--white);
-    box-shadow: 0 4px 20px rgba(58,114,50,0.12);
-    animation: pulse 2.5s ease-out infinite;
-  }
+  .check-wrap { width: 72px; height: 72px; border-radius: 50%; border: 2px solid rgba(58,114,50,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; background: var(--white); box-shadow: 0 4px 20px rgba(58,114,50,0.12); animation: pulse 2.5s ease-out infinite; }
   @keyframes pulse { 0%, 100% { transform: scale(0.97); } 50% { transform: scale(1.02); } }
   .check-icon { color: var(--green); font-size: 30px; }
 
-  /* HEADER */
   .page-header { text-align: center; margin-bottom: 40px; }
-  .tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--green-light); margin-bottom: 16px; display: block;
-  }
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(30px, 5vw, 46px);
-    font-weight: 700; line-height: 1.15;
-    color: var(--text); margin-bottom: 20px;
-  }
+  .tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green-light); margin-bottom: 16px; display: block; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 46px); font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 20px; }
   h1 em { color: var(--green); font-style: italic; font-weight: 600; }
-  .page-intro {
-    font-size: 17px; color: var(--text-soft);
-    line-height: 1.85; max-width: 520px; margin: 0 auto;
-  }
+  .page-intro { font-size: 17px; color: var(--text-soft); line-height: 1.85; max-width: 520px; margin: 0 auto; }
 
-  /* DIVIDER */
-  .ornament {
-    display: flex; align-items: center; gap: 16px; margin: 36px 0;
-  }
-  .ornament::before, .ornament::after {
-    content: ''; flex: 1; height: 1px; background: rgba(60,100,50,0.2);
-  }
+  .ornament { display: flex; align-items: center; gap: 16px; margin: 36px 0; }
+  .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: rgba(60,100,50,0.2); }
   .ornament span { font-size: 10px; color: var(--green-light); letter-spacing: 3px; }
 
-  /* WHATSAPP MAIN SECTION */
-  .wa-main {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 36px 36px 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    margin-bottom: 24px;
-  }
-  .wa-main-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--green-light); margin-bottom: 18px; display: block;
-  }
-  .wa-main h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(24px, 3.5vw, 32px);
-    font-weight: 700; color: var(--text);
-    margin-bottom: 16px; line-height: 1.25;
-  }
+  .wa-main { background: var(--white); border: 1px solid var(--border); padding: 36px 36px 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 24px; }
+  .wa-main-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green-light); margin-bottom: 18px; display: block; }
+  .wa-main h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3.5vw, 32px); font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.25; }
   .wa-main h2 em { color: var(--green); font-style: italic; }
-  .wa-main p {
-    font-size: 16px; color: var(--text-soft);
-    line-height: 1.85; margin-bottom: 12px;
-  }
+  .wa-main p { font-size: 16px; color: var(--text-soft); line-height: 1.85; margin-bottom: 12px; }
   .wa-main p:last-of-type { margin-bottom: 0; }
 
-  /* STEPS */
-  .steps-box {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    padding: 24px 28px;
-    margin: 28px 0;
-  }
-  .steps-box-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--text-muted); margin-bottom: 16px; display: block;
-  }
-  .step-row {
-    display: flex; align-items: flex-start; gap: 14px;
-    margin-bottom: 14px;
-  }
+  .steps-box { background: var(--bg-alt); border: 1px solid var(--border); padding: 24px 28px; margin: 28px 0; }
+  .steps-box-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; }
+  .step-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
   .step-row:last-child { margin-bottom: 0; }
-  .step-num {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: var(--green); color: #fff;
-    width: 26px; height: 26px; border-radius: 50%;
-    font-size: 12px; font-weight: 600;
-    flex-shrink: 0; margin-top: 2px;
-  }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; background: var(--green); color: #fff; width: 26px; height: 26px; border-radius: 50%; font-size: 12px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
   .step-text { font-size: 15px; color: var(--text-soft); line-height: 1.65; }
   .step-text strong { color: var(--text); font-weight: 600; }
 
-  /* REASSURANCE BOX */
-  .reassurance {
-    background: rgba(58,114,50,0.06);
-    border-left: 3px solid var(--green);
-    padding: 18px 22px;
-    margin: 24px 0;
-  }
-  .reassurance p {
-    font-size: 15px; color: var(--text-soft);
-    line-height: 1.75; margin-bottom: 8px;
-  }
+  .reassurance { background: rgba(58,114,50,0.06); border-left: 3px solid var(--green); padding: 18px 22px; margin: 24px 0; }
+  .reassurance p { font-size: 15px; color: var(--text-soft); line-height: 1.75; margin-bottom: 8px; }
   .reassurance p:last-child { margin-bottom: 0; }
   .reassurance strong { color: var(--text); }
 
-  /* MESSAGE PREVIEW */
   .message-preview { margin: 24px 0 20px; }
-  .message-preview-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--text-muted); margin-bottom: 10px; display: block;
-  }
-  .wa-bubble {
-    display: inline-block;
-    background: rgba(37,211,102,0.1);
-    border: 1px solid rgba(37,211,102,0.25);
-    padding: 14px 18px;
-    font-size: 15px; color: var(--text-soft);
-    font-style: italic; line-height: 1.7;
-    border-radius: 0 14px 14px 14px;
-    width: 100%;
-  }
+  .message-preview-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; display: block; }
+  .wa-bubble { display: inline-block; background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25); padding: 14px 18px; font-size: 15px; color: var(--text-soft); font-style: italic; line-height: 1.7; border-radius: 0 14px 14px 14px; width: 100%; }
 
-  /* RESPONSE TIME */
-  .response-time {
-    font-size: 13px; color: var(--text-muted);
-    text-align: center; margin-bottom: 16px;
-    line-height: 1.6;
-    font-style: italic;
-  }
+  .response-time { font-size: 13px; color: var(--text-muted); text-align: center; margin-bottom: 16px; line-height: 1.6; font-style: italic; }
 
-  /* WA BUTTON */
   .wa-btn-wrap { text-align: center; }
-  .wa-btn {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: var(--green); color: #ffffff;
-    font-family: 'Jost', sans-serif;
-    font-weight: 600; font-size: 14px;
-    letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 18px 40px; text-decoration: none;
-    transition: all 0.3s ease;
-    width: 100%; justify-content: center;
-  }
+  .wa-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--green); color: #ffffff; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding: 18px 40px; text-decoration: none; transition: all 0.3s ease; width: 100%; justify-content: center; cursor: pointer; border: none; }
   .wa-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(58,114,50,0.25); }
   .wa-icon { font-size: 22px; }
-  .wa-disclaimer {
-    font-size: 13px; color: var(--text-muted);
-    margin-top: 12px; line-height: 1.7; text-align: center;
-  }
+  .wa-disclaimer { font-size: 13px; color: var(--text-muted); margin-top: 12px; line-height: 1.7; text-align: center; }
 
-  /* TESTIMONIOS */
   .testimonios-section { margin-top: 48px; }
-  .section-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--text-muted); margin-bottom: 20px; display: block;
-    text-align: center;
-  }
+  .section-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; display: block; text-align: center; }
   .videos-row { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
   .video-slot { background: #000; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 
-  /* Video Nina */
   .video-nina-section { margin-bottom: 8px; }
-  .video-nina-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--text-muted); margin-bottom: 16px; display: block; text-align: center;
-  }
-  .video-nina-wrap {
-    position: relative;
-    max-width: 360px;
-    margin: 0 auto;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-  }
-  .sound-btn-nina {
-    position: absolute; bottom: 20px; left: 50%;
-    transform: translateX(-50%);
-    display: flex; align-items: center; gap: 8px;
-    background: rgba(0,0,0,0.75); color: #ffffff;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px; font-weight: 600; letter-spacing: 1px;
-    padding: 10px 22px; cursor: pointer; z-index: 10;
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
-    animation: pulse-sound 2s ease-in-out infinite;
-    white-space: nowrap;
-  }
+  .video-nina-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; text-align: center; }
+  .video-nina-wrap { position: relative; max-width: 360px; margin: 0 auto; box-shadow: 0 8px 40px rgba(0,0,0,0.15); }
+  .sound-btn-nina { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.75); color: #ffffff; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; padding: 10px 22px; cursor: pointer; z-index: 10; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; animation: pulse-sound 2s ease-in-out infinite; white-space: nowrap; }
   .sound-btn-nina:hover { background: rgba(58,114,50,0.9); }
   .sound-btn-nina.hidden { opacity: 0; pointer-events: none; }
-  @keyframes pulse-sound {
-    0%, 100% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.04); }
-  }
+  @keyframes pulse-sound { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.04); } }
 
-  /* FOOTER */
-  footer {
-    background: #1e2e1c;
-    border-top: 1px solid rgba(60,100,50,0.2);
-    padding: 28px 40px; text-align: center;
-    position: relative; z-index: 1;
-  }
+  footer { background: #1e2e1c; border-top: 1px solid rgba(60,100,50,0.2); padding: 28px 40px; text-align: center; position: relative; z-index: 1; }
   .footer-note { font-size: 12px; color: #5a7a54; line-height: 1.8; max-width: 500px; margin: 0 auto; }
 
-  /* ANIMATIONS */
   .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease forwards; }
   @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-  .d1 { animation-delay: 0.1s; }
-  .d2 { animation-delay: 0.25s; }
-  .d3 { animation-delay: 0.4s; }
-  .d4 { animation-delay: 0.55s; }
+  .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.25s; } .d3 { animation-delay: 0.4s; } .d4 { animation-delay: 0.55s; }
 
   @media (max-width: 600px) {
     nav { padding: 20px; }
@@ -325,11 +143,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
 
 <main>
 
-  <!-- HEADER -->
   <div class="page-header">
-    <div class="check-wrap fade-in d1">
-      <span class="check-icon">✓</span>
-    </div>
+    <div class="check-wrap fade-in d1"><span class="check-icon">✓</span></div>
     <span class="tag fade-in d1">Perfil recibido</span>
     <h1 class="fade-in d2">Tu perfil califica para una<em> Sesión de Diagnóstico conmigo.</em></h1>
     <p class="page-intro fade-in d2">
@@ -344,19 +159,16 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     <span class="video-nina-label">Un mensaje de Nina para vos</span>
     <div class="video-nina-wrap">
       <div style="padding:177.82% 0 0 0;position:relative;">
-        <iframe
-          id="video-nina"
+        <iframe id="video-nina"
           src="https://player.vimeo.com/video/1200586394?title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1&autoplay=1&player_id=video-nina&app_id=58479"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
           title="Video Nina">
         </iframe>
       </div>
       <div class="sound-btn-nina" id="sound-btn-nina" onclick="activateSoundNina()">
-        <span>🔇</span>
-        <span>Activar sonido</span>
+        <span>🔇</span><span>Activar sonido</span>
       </div>
     </div>
   </div>
@@ -372,54 +184,23 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     <div class="steps-box">
       <span class="steps-box-title">¿Cómo hacerlo? Son 3 pasos simples</span>
 
-      <!-- iOS instructions -->
       <div id="steps-ios" style="display:none">
-        <div class="step-row">
-          <span class="step-num">1</span>
-          <span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span>
-        </div>
-        <div class="step-row">
-          <span class="step-num">2</span>
-          <span class="step-text">Se va a abrir un cartel preguntando <strong>"¿Abrir en WA Business?"</strong> — tocá <strong>Abrir</strong>. Esto es normal, es solo una confirmación de tu celular</span>
-        </div>
-        <div class="step-row">
-          <span class="step-num">3</span>
-          <span class="step-text">Si aparecen dos opciones (<strong>Mensaje</strong> / <strong>WhatsApp Business</strong>), elegí <strong>WhatsApp Business</strong>. El mensaje ya está escrito — solo tocá <strong>Enviar</strong></span>
-        </div>
+        <div class="step-row"><span class="step-num">1</span><span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span></div>
+        <div class="step-row"><span class="step-num">2</span><span class="step-text">Se va a abrir un cartel preguntando <strong>"¿Abrir en WA Business?"</strong> — tocá <strong>Abrir</strong>. Esto es normal, es solo una confirmación de tu celular</span></div>
+        <div class="step-row"><span class="step-num">3</span><span class="step-text">Si aparecen dos opciones (<strong>Mensaje</strong> / <strong>WhatsApp Business</strong>), elegí <strong>WhatsApp Business</strong>. El mensaje ya está escrito — solo tocá <strong>Enviar</strong></span></div>
       </div>
 
-      <!-- Android instructions -->
       <div id="steps-android" style="display:none">
-        <div class="step-row">
-          <span class="step-num">1</span>
-          <span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span>
-        </div>
-        <div class="step-row">
-          <span class="step-num">2</span>
-          <span class="step-text">Se va a abrir WhatsApp directamente. Si aparece un selector de apps, elegí <strong>WhatsApp Business</strong></span>
-        </div>
-        <div class="step-row">
-          <span class="step-num">3</span>
-          <span class="step-text">El mensaje ya está escrito — solo tocá <strong>Enviar</strong> y listo. Nina te responde a la brevedad</span>
-        </div>
+        <div class="step-row"><span class="step-num">1</span><span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span></div>
+        <div class="step-row"><span class="step-num">2</span><span class="step-text">Se va a abrir WhatsApp directamente. Si aparece un selector de apps, elegí <strong>WhatsApp Business</strong></span></div>
+        <div class="step-row"><span class="step-num">3</span><span class="step-text">El mensaje ya está escrito — solo tocá <strong>Enviar</strong> y listo. Nina te responde a la brevedad</span></div>
       </div>
 
-      <!-- Fallback (desktop) -->
       <div id="steps-default" style="display:none">
-        <div class="step-row">
-          <span class="step-num">1</span>
-          <span class="step-text">Hacé clic en el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span>
-        </div>
-        <div class="step-row">
-          <span class="step-num">2</span>
-          <span class="step-text">Se va a abrir WhatsApp Web o la app de escritorio con el mensaje ya escrito</span>
-        </div>
-        <div class="step-row">
-          <span class="step-num">3</span>
-          <span class="step-text">Solo hacé clic en <strong>Enviar</strong> — Nina te responde a la brevedad para coordinar tu videollamada</span>
-        </div>
+        <div class="step-row"><span class="step-num">1</span><span class="step-text">Hacé clic en el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span></div>
+        <div class="step-row"><span class="step-num">2</span><span class="step-text">Se va a abrir WhatsApp Web o la app de escritorio con el mensaje ya escrito</span></div>
+        <div class="step-row"><span class="step-num">3</span><span class="step-text">Solo hacé clic en <strong>Enviar</strong> — Nina te responde a la brevedad para coordinar tu videollamada</span></div>
       </div>
-
     </div>
 
     <div class="reassurance">
@@ -428,20 +209,16 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
 
     <div class="message-preview">
       <span class="message-preview-label">Mensaje que se va a enviar</span>
-      <div class="wa-bubble">
-        Hola Nina, completé mi perfil para el Reset Metabólico. Quiero saber si el programa es para mí, ¿cuándo podemos hablar?
-      </div>
+      <div class="wa-bubble">Hola Nina, completé mi perfil para el Reset Metabólico. Quiero saber si el programa es para mí, ¿cuándo podemos hablar?</div>
     </div>
 
     <p class="response-time">Respondo personalmente — en general contesto dentro de las 2 horas siguientes en horario laboral.</p>
 
     <div class="wa-btn-wrap">
-      <a href="https://wa.me/5492616013554?text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F"
-         class="wa-btn" target="_blank"
-         onclick="fbq('track', 'Contact'); window.location='whatsapp://send?phone=5492616013554&text=Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F'; return false;">
+      <button class="wa-btn" onclick="abrirWhatsApp()">
         <span class="wa-icon">💬</span>
         Escribir a Nina por WhatsApp
-      </a>
+      </button>
       <p class="wa-disclaimer">Al hacer clic se abre WhatsApp con el mensaje ya escrito. Solo tocá Enviar.</p>
     </div>
   </div>
@@ -478,6 +255,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     document.getElementById('sound-btn-nina').classList.add('hidden');
   }
 
+  // Detección de OS para instrucciones
   const ua = navigator.userAgent;
   const isIOS = /iPhone|iPad|iPod/i.test(ua);
   const isAndroid = /Android/i.test(ua);
@@ -487,6 +265,25 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     document.getElementById('steps-android').style.display = 'block';
   } else {
     document.getElementById('steps-default').style.display = 'block';
+  }
+
+  // Botón WhatsApp — dispara el evento Contact primero, luego abre WA
+  function abrirWhatsApp() {
+    const texto = 'Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F';
+    const urlWeb = 'https://wa.me/5492616013554?text=' + texto;
+    const urlApp = 'whatsapp://send?phone=5492616013554&text=' + texto;
+
+    // 1. Disparar evento al Pixel de Meta
+    fbq('track', 'Contact');
+
+    // 2. Esperar 300ms para que el Pixel registre antes de navegar
+    setTimeout(function() {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        window.location.href = urlApp;
+      } else {
+        window.open(urlWeb, '_blank');
+      }
+    }, 300);
   }
 </script>
 
