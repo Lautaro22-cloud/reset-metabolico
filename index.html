@@ -21,16 +21,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x724ybg2cg");
-</script>
-<!-- End Microsoft Clarity -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -73,6 +63,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     font-size: 17px;
   }
 
+  /* ── BOTANICAL TEXTURE OVERLAY ── */
   body::before {
     content: '';
     position: fixed; inset: 0; z-index: 0;
@@ -82,11 +73,18 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       radial-gradient(ellipse 80% 100% at 5% 90%, rgba(30,51,32,0.22) 0%, transparent 50%);
   }
 
-  .leaf-deco { position: absolute; pointer-events: none; opacity: 0.07; }
+  /* Leaf SVG decorative */
+  .leaf-deco {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.07;
+  }
+
+  /* ── UTILITY ── */
   .container { max-width: 820px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
   .container--wide { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
     display: flex; align-items: center; justify-content: space-between;
@@ -96,85 +94,264 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     border-bottom: 1px solid rgba(60,100,50,0.15);
     box-shadow: 0 2px 20px rgba(0,0,0,0.06);
   }
-  .nav-logo { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase; color: #3a7232; }
-  .nav-cta { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; background: #3a7232; padding: 10px 24px; text-decoration: none; transition: all 0.3s ease; }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: #3a7232;
+  }
+  .nav-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #ffffff; background: #3a7232;
+    padding: 10px 24px; text-decoration: none;
+    transition: all 0.3s ease;
+  }
   .nav-cta:hover { background: #2d5e28; }
 
-  /* HERO */
-  .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 120px 0 80px; }
-  .hero-leaf-bg { position: absolute; right: -80px; top: -60px; width: 620px; height: 620px; opacity: 0.055; pointer-events: none; z-index: 0; }
-  .hero-leaf-bg2 { position: absolute; left: -120px; bottom: -100px; width: 500px; height: 500px; opacity: 0.04; pointer-events: none; z-index: 0; transform: rotate(120deg); }
-  .hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 70px; align-items: center; position: relative; z-index: 1; }
-  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #3a7232; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  /* Big decorative leaf background */
+  .hero-leaf-bg {
+    position: absolute; right: -80px; top: -60px;
+    width: 620px; height: 620px; opacity: 0.055;
+    pointer-events: none; z-index: 0;
+  }
+  .hero-leaf-bg2 {
+    position: absolute; left: -120px; bottom: -100px;
+    width: 500px; height: 500px; opacity: 0.04;
+    pointer-events: none; z-index: 0; transform: rotate(120deg);
+  }
+
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 340px;
+    gap: 70px; align-items: center; position: relative; z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: #3a7232; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
   .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: #3a7232; }
 
-  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5.5vw, 64px); font-weight: 700; line-height: 1.08; color: #1e2e1c; margin-bottom: 28px; letter-spacing: -0.5px; }
-  h1 em { font-style: italic; color: #3a7232; display: block; font-weight: 600; }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5.5vw, 64px);
+    font-weight: 700; line-height: 1.08;
+    color: #1e2e1c; margin-bottom: 28px;
+    letter-spacing: -0.5px;
+  }
+  h1 em {
+    font-style: italic; color: #3a7232;
+    display: block; font-weight: 600;
+  }
 
-  .hero-sub { font-size: 18px; line-height: 1.8; font-weight: 400; color: #3a4e36; margin-bottom: 44px; border-left: 3px solid #5e9454; padding-left: 20px; }
+  .hero-sub {
+    font-size: 18px; line-height: 1.8; font-weight: 400;
+    color: #3a4e36; margin-bottom: 20px;
+    border-left: 3px solid #5e9454;
+    padding-left: 20px;
+  }
+  .hero-sub2 {
+    font-size: 17px; line-height: 1.8; font-weight: 300;
+    color: #5a7254; margin-bottom: 44px;
+    font-style: italic;
+    padding-left: 23px;
+  }
 
+  /* Image box */
   .hero-img-wrap { position: relative; }
-  .hero-img-wrap::before { content: ''; position: absolute; inset: 12px -12px -12px 12px; border: 1px solid rgba(107,143,94,0.25); z-index: 0; }
-  .hero-img { position: relative; z-index: 1; width: 100%; aspect-ratio: 3/4; background: var(--dark-green); border: 1px solid rgba(107,143,94,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; overflow: hidden; }
-  .hero-img-placeholder { text-align: center; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--muted); line-height: 2; }
+  .hero-img-wrap::before {
+    content: '';
+    position: absolute; inset: 12px -12px -12px 12px;
+    border: 1px solid rgba(107,143,94,0.25); z-index: 0;
+  }
+  .hero-img {
+    position: relative; z-index: 1;
+    width: 100%; aspect-ratio: 3/4;
+    background: var(--dark-green);
+    border: 1px solid rgba(107,143,94,0.2);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 14px; overflow: hidden;
+  }
+  .hero-img-placeholder {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 2px;
+    color: var(--muted); line-height: 2;
+  }
   .hero-img-placeholder svg { opacity: 0.25; margin-bottom: 8px; }
-  .hero-badge { position: absolute; bottom: -16px; left: -16px; z-index: 2; background: var(--sage); color: var(--cream); padding: 12px 18px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; max-width: 170px; line-height: 1.7; }
+  .hero-badge {
+    position: absolute; bottom: -16px; left: -16px; z-index: 2;
+    background: var(--sage); color: var(--cream);
+    padding: 12px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    max-width: 170px; line-height: 1.7;
+  }
 
-  /* BUTTONS */
-  .btn { display: inline-block; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding: 18px 40px; transition: all 0.3s ease; cursor: pointer; border: none; }
-  .btn-primary { background: #3a7232; color: #ffffff; }
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-block; text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600; font-size: 14px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 18px 40px;
+    transition: all 0.3s ease; cursor: pointer; border: none;
+  }
+  .btn-primary {
+    background: #3a7232; color: #ffffff;
+  }
   .btn-primary:hover { background: #2d5e28; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(58,114,50,0.25); }
-  .btn-outline { background: transparent; color: #3a7232; border: 2px solid #3a7232; }
+  .btn-outline {
+    background: transparent; color: #3a7232;
+    border: 2px solid #3a7232;
+  }
   .btn-outline:hover { background: rgba(58,114,50,0.06); }
 
-  .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(107,143,94,0.25), transparent); }
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(107,143,94,0.25), transparent);
+  }
 
-  /* VSL */
+  /* ── VSL ── */
   .sec-vsl { padding: 60px 0; background: #1e2e1c; }
-  .vsl-wrap { position: relative; padding-top: 56.25%; max-width: 860px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  .vsl-wrap {
+    position: relative;
+    padding-top: 56.25%;
+    max-width: 860px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
   .vsl-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-  .vsl-caption { max-width: 860px; margin: 28px auto 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2.5vw, 22px); font-style: italic; font-weight: 500; color: rgba(245,241,234,0.85); text-align: center; line-height: 1.6; }
+  .vsl-caption {
+    max-width: 860px; margin: 28px auto 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-style: italic; font-weight: 500;
+    color: rgba(245,241,234,0.85);
+    text-align: center; line-height: 1.6;
+  }
   .vsl-cta { text-align: center; margin-top: 32px; }
   .vsl-cta .btn-primary { background: #ffffff; color: #3a7232; }
   .vsl-cta .btn-primary:hover { background: #f0ece4; }
-  .sound-btn { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.75); color: #ffffff; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1px; padding: 12px 24px; cursor: pointer; z-index: 10; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; animation: pulse-sound 2s ease-in-out infinite; white-space: nowrap; }
+  .sound-btn {
+    position: absolute; bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(0,0,0,0.75);
+    color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    cursor: pointer; z-index: 10;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    animation: pulse-sound 2s ease-in-out infinite;
+    white-space: nowrap;
+  }
   .sound-btn:hover { background: rgba(58,114,50,0.9); border-color: rgba(255,255,255,0.6); }
   .sound-btn.hidden { opacity: 0; pointer-events: none; }
   .sound-icon { font-size: 18px; }
-  @keyframes pulse-sound { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.04); } }
+  @keyframes pulse-sound {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.04); }
+  }
 
-  /* TICKER */
-  .ticker { background: var(--forest); border-top: 1px solid rgba(107,143,94,0.2); border-bottom: 1px solid rgba(107,143,94,0.2); padding: 16px 0; overflow: hidden; }
-  .ticker-inner { display: flex; gap: 0; animation: scroll 25s linear infinite; white-space: nowrap; }
+  /* ── TICKER ── */
+  .ticker {
+    background: var(--forest);
+    border-top: 1px solid rgba(107,143,94,0.2);
+    border-bottom: 1px solid rgba(107,143,94,0.2);
+    padding: 16px 0; overflow: hidden;
+  }
+  .ticker-inner {
+    display: flex; gap: 0;
+    animation: scroll 25s linear infinite;
+    white-space: nowrap;
+  }
   @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-  .ticker-item { display: inline-flex; align-items: center; gap: 10px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mint); padding: 0 40px; opacity: 0.85; }
+  .ticker-item {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--mint); padding: 0 40px; opacity: 0.85;
+  }
   .ticker-item::before { content: '✦'; font-size: 7px; }
 
+  /* ── SECTION BASE ── */
   section { position: relative; overflow: hidden; }
-  .sec-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #3a7232; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .sec-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: #3a7232; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
   .sec-label::before { content: ''; width: 22px; height: 1px; background: #3a7232; }
 
-  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 50px); font-weight: 700; line-height: 1.15; letter-spacing: -0.3px; color: #1e2e1c; margin-bottom: 28px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -0.3px;
+    color: #1e2e1c; margin-bottom: 28px;
+  }
   h2 em { color: #3a7232; font-style: italic; font-weight: 600; }
 
-  /* CONFLICT */
+  /* ── CONFLICT ── */
   .sec-conflict { padding: 100px 0; background: #eceae0; }
-  .conflict-text { font-size: 18px; line-height: 1.85; color: #2e4228; margin-bottom: 14px; }
-  .conflict-quote { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 500; color: #4a6a44; margin-bottom: 52px; line-height: 1.6; border-left: 3px solid #5e9454; padding-left: 20px; }
-  .pain-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #5a7854; margin-bottom: 24px; }
+
+  .conflict-text {
+    font-size: 18px; line-height: 1.85; color: #2e4228;
+    margin-bottom: 14px;
+  }
+  .conflict-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic; font-weight: 500;
+    color: #4a6a44;
+    margin-bottom: 52px; line-height: 1.6;
+    border-left: 3px solid #5e9454; padding-left: 20px;
+  }
+
+  .pain-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: #5a7854; margin-bottom: 24px;
+  }
   .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-  .pain-card { background: #ffffff; border: 1px solid rgba(60,100,50,0.15); padding: 36px 28px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .pain-card {
+    background: #ffffff;
+    border: 1px solid rgba(60,100,50,0.15);
+    padding: 36px 28px;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
   .pain-card:hover { border-color: rgba(58,114,50,0.4); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
   .pain-icon { font-size: 32px; margin-bottom: 18px; display: block; }
-  .pain-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 700; color: #1e2e1c; margin-bottom: 10px; }
+  .pain-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic; font-weight: 700;
+    color: #1e2e1c; margin-bottom: 10px;
+  }
   .pain-body { font-size: 15px; color: #5a7254; line-height: 1.7; font-weight: 400; }
 
-  /* MECHANISM */
+  /* ── MECHANISM ── */
   .sec-mech { padding: 100px 0; background: #f5f1ea; }
   .mech-intro { font-size: 18px; color: #3a4e36; margin-bottom: 14px; }
   .mech-statement { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.2; color: #1e2e1c; margin-bottom: 18px; }
   .mech-statement em { color: #3a7232; font-style: italic; font-weight: 600; }
   .mech-sub { font-size: 15px; color: #5a7254; margin-bottom: 64px; }
+
   .pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
   .pillar { background: #ffffff; border: 1px solid rgba(60,100,50,0.15); padding: 40px 30px; position: relative; transition: all 0.35s; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
   .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, #3a7232, #7aaa72); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
@@ -185,64 +362,56 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .pillar-body { font-size: 15px; color: #5a7254; line-height: 1.75; font-weight: 400; }
   .mech-leaf { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 400px; opacity: 0.04; pointer-events: none; }
 
-  /* SOCIAL PROOF */
+  /* ── SOCIAL PROOF ── */
   .sec-social { padding: 100px 0; background: #eceae0; }
   .social-head { text-align: center; margin-bottom: 60px; }
   .social-sub { font-size: 16px; color: #5a7254; margin-top: 8px; }
+
   .videos-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 16px; }
-  .video-slot { position: relative; width: 100%; padding-top: 177.78%; background: #000; border: 1px solid rgba(60,100,50,0.15); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-  .video-slot iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-slot {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%;
+    background: #000;
+    border: 1px solid rgba(60,100,50,0.15);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .video-slot iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
   .video-slot-wrap { display: flex; flex-direction: column; }
-  .testimonial-label { background: #1e2e1c; padding: 12px 16px; display: flex; flex-direction: column; gap: 3px; }
+  .testimonial-label {
+    background: #1e2e1c;
+    padding: 12px 16px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
   .testimonial-name { font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 600; color: #ffffff; }
   .testimonial-role { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: #7aaa72; text-transform: uppercase; }
-  .testimonial-result { font-family: 'Jost', sans-serif; font-size: 13px; color: rgba(255,255,255,0.7); font-style: italic; margin-top: 2px; }
-  .testimonial-results { background: #162418; padding: 16px; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid rgba(255,255,255,0.08); }
-  .results-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #7aaa72; margin-bottom: 4px; }
-  .result-item { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; font-family: 'Jost', sans-serif; }
 
-  /* STATS */
   .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
-  .stat-box { background: #3a7232; padding: 28px 16px; text-align: center; transition: background 0.3s; }
+  .stat-box { background: #3a7232; padding: 32px 20px; text-align: center; transition: background 0.3s; }
   .stat-box:hover { background: #2d5e28; }
-  .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; font-style: italic; color: #ffffff; display: block; margin-bottom: 4px; line-height: 1.2; }
-  .stat-lbl { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; font-style: italic; color: rgba(255,255,255,0.9); display: block; margin-bottom: 8px; }
-  .stat-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; font-family: 'Jost', sans-serif; }
+  .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 700; color: #ffffff; display: block; margin-bottom: 6px; }
+  .stat-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.75); }
 
-  /* VOZ DE NINA */
-  .sec-nina-voice { padding: 80px 0; background: #f5f1ea; }
-  .nina-voice-wrap { display: flex; align-items: flex-start; gap: 40px; max-width: 720px; margin: 0 auto; }
-  .nina-voice-photo {
-    width: 90px; height: 90px; border-radius: 50%;
-    background: #e0edd8; border: 2px solid rgba(58,114,50,0.2);
-    flex-shrink: 0; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .nina-voice-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .nina-voice-photo-placeholder {
-    font-family: 'DM Mono', monospace; font-size: 8px;
-    letter-spacing: 1px; text-transform: uppercase;
-    color: #7aaa72; text-align: center; padding: 8px;
-  }
-  .nina-voice-text blockquote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(18px, 2.5vw, 22px);
-    font-style: italic; font-weight: 500;
-    color: #2e4228; line-height: 1.75;
-    margin-bottom: 16px;
-  }
-  .nina-voice-text cite {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-    color: #3a7232; font-style: normal;
-  }
-
-  /* FORM */
+  /* ── FORM ── */
   .sec-form { padding: 100px 0; background: #f5f1ea; }
   .sec-form::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(94,148,84,0.05) 0%, transparent 65%); pointer-events: none; }
   .form-head { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
   .form-head p { font-size: 17px; color: #3a4e36; max-width: 500px; margin: 0 auto; font-weight: 400; }
-  .form-friction { background: rgba(58,114,50,0.07); border-left: 3px solid #3a7232; padding: 16px 20px; margin: 20px auto 24px; max-width: 560px; font-size: 15px; color: #2e4228; line-height: 1.75; text-align: left; }
+  .form-friction {
+    background: rgba(58,114,50,0.07);
+    border-left: 3px solid #3a7232;
+    padding: 16px 20px;
+    margin: 20px auto 24px;
+    max-width: 560px;
+    font-size: 15px; color: #2e4228;
+    line-height: 1.75; text-align: left;
+  }
   .form-wrap { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
   .form-step { background: #ffffff; border: 1px solid rgba(60,100,50,0.15); padding: 38px 36px; margin-bottom: 16px; transition: border-color 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
   .form-step:focus-within { border-color: rgba(58,114,50,0.45); }
@@ -254,6 +423,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .opt.selected { border-color: #3a7232; color: #1e2e1c; background: rgba(58,114,50,0.06); }
   .opt input { accent-color: #3a7232; width: 18px; height: 18px; flex-shrink: 0; }
   .form-footnote { font-size: 13px; color: #5a7254; margin-top: 14px; line-height: 1.8; font-style: italic; }
+
+  /* Contact fields */
   .contact-fields { display: flex; flex-direction: column; gap: 12px; }
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .field-group { display: flex; flex-direction: column; gap: 7px; }
@@ -263,38 +434,42 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .field-input:focus { border-color: rgba(58,114,50,0.5); }
   .field-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a7254' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
   @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+
+  /* Error states */
   .step-error { border-color: rgba(180,50,50,0.5) !important; position: relative; }
   .step-error::after { content: 'Este campo es obligatorio'; position: absolute; bottom: -22px; left: 0; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: #b43232; text-transform: uppercase; }
   .input-error { border-color: rgba(180,50,50,0.5) !important; }
   .input-error:focus { border-color: rgba(180,50,50,0.7) !important; }
+
   .form-cta { text-align: center; margin-top: 36px; }
   .form-disclaimer { font-size: 13px; color: #5a7254; text-align: center; margin-top: 18px; line-height: 1.8; }
 
-  /* FINAL CTA */
+  /* ── FINAL CTA ── */
   .sec-cta { padding: 120px 0; text-align: center; background: #3a7232; position: relative; }
   .sec-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 65%); pointer-events: none; }
   .cta-leaf { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 700px; opacity: 0.06; pointer-events: none; }
   .cta-inner { position: relative; z-index: 1; }
   .cta-pre { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 24px; display: block; }
-  .cta-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 600; line-height: 1.2; color: rgba(255,255,255,0.85); margin-bottom: 16px; font-style: italic; }
-  .cta-h-main { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 58px); font-weight: 700; line-height: 1.08; color: #ffffff; margin-bottom: 24px; }
-  .cta-h-main em { color: rgba(255,255,255,0.85); font-style: italic; font-weight: 500; display: block; }
-  .cta-sub { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 520px; margin: 0 auto 50px; line-height: 1.8; }
+  .cta-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 68px); font-weight: 700; line-height: 1.08; color: #ffffff; margin-bottom: 20px; }
+  .cta-h em { color: rgba(255,255,255,0.85); font-style: italic; font-weight: 500; display: block; }
+  .cta-sub { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 460px; margin: 0 auto 50px; line-height: 1.8; }
   .btn-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .sec-cta .btn-primary { background: #ffffff; color: #3a7232; }
   .sec-cta .btn-primary:hover { background: #f0ece4; }
+  .sec-cta .btn-outline { color: #ffffff; border: 2px solid rgba(255,255,255,0.6); }
+  .sec-cta .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #ffffff; }
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer { background: #1e2e1c; padding: 40px 0; border-top: 1px solid rgba(60,100,50,0.2); }
   .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
   .footer-brand { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #7aaa72; }
   .footer-note { font-size: 12px; color: #5a7a54; max-width: 420px; line-height: 1.75; }
 
-  /* ANIMATIONS */
+  /* ── ANIMATIONS ── */
   .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* RESPONSIVE */
+  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .hero { padding: 100px 0 60px; }
@@ -306,7 +481,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     .stats-row { grid-template-columns: repeat(2,1fr); }
     .footer-inner { flex-direction: column; text-align: center; }
     .form-step { padding: 28px 22px; }
-    .nina-voice-wrap { flex-direction: column; align-items: center; text-align: center; }
   }
 </style>
 </head>
@@ -320,6 +494,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
 <!-- HERO -->
 <section class="hero">
+  <!-- Decorative leaves -->
   <svg class="hero-leaf-bg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M200 20 C280 60 380 150 360 280 C340 380 220 400 140 360 C60 320 20 200 60 120 C100 40 160 10 200 20Z" fill="#4a6741"/>
     <path d="M200 20 C200 20 200 400 200 400" stroke="#6b8f5e" stroke-width="2"/>
@@ -338,11 +513,16 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="fade-up">
         <div class="hero-eyebrow">Programa 1 a 1 · Exclusivo</div>
         <h1>Tomás decisiones críticas todos los días,<em>pero tu energía y tu cuerpo ya no están a la altura.</em></h1>
-        <p class="hero-sub">Un programa 1 a 1 para empresarios y profesionales con diabetes tipo 2, prediabetes o sobrepeso que necesitan resultados reales sin frenar su vida.</p>
+        <p class="hero-sub">Un programa 1 a 1 para empresarios, profesionales y líderes de alto rendimiento con diabetes tipo 2, prediabetes o sobrepeso que necesitan resultados reales sin perder tiempo en estrategias que no funcionan.</p>
+        <p class="hero-sub2">Normalizá tus glucemias, bajá kilos de grasa aumentando masa muscular y recuperá tu energía, motivación y claridad mental sin soluciones genéricas y sin depender de medicación a largo plazo.</p>
         <a href="#diagnostico" class="btn btn-primary">Quiero saber más</a>
       </div>
       <div class="hero-img-wrap fade-up" style="transition-delay:.2s">
         <div class="hero-img">
+          <!--
+            REEMPLAZÁ ESTE BLOQUE CON:
+            <img src="nina.jpg" alt="Nina Alvarez Tatar" style="width:100%;height:100%;object-fit:cover;">
+          -->
           <div class="hero-img-placeholder">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#6b8f5e" stroke-width="1">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -446,22 +626,22 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="fade-up">
       <div class="sec-label">La solución</div>
       <div class="mech-statement">No es otra dieta de cajón.<br><em>Es una intervención metabólica diseñada para agendas colapsadas.</em></div>
-      <p class="mech-intro">Trabajo la causa raíz — reordeno tu reloj biológico y tu metabolismo en tu contexto real. Porque bajar de peso y regular tus glucemias de forma definitiva requiere un plan hecho para vos, no para el paciente promedio.</p>
+      <p class="mech-intro">El programa Reset Metabólico de la Lic. Nina Alvarez Tatar trabaja la causa raíz — reordena tu reloj biológico y tu metabolismo en tu contexto real. Porque bajar de peso y/o regular tus glucemias de forma definitiva requieren un plan hecho para vos y de forma integral, no para "el paciente promedio".</p>
     </div>
     <div class="pillars">
       <div class="pillar fade-up" style="transition-delay:.1s">
         <span class="pillar-num">01 ·</span>
-        <div class="pillar-title">Tu agenda es el punto de partida</div>
+        <div class="pillar-title">Biología aplicada a tu rutina</div>
         <p class="pillar-body">No te pedimos que frenes tu vida. Adaptamos la estrategia a tus horarios, no al revés. Tu agenda es el punto de partida, no el obstáculo.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.2s">
         <span class="pillar-num">02 ·</span>
-        <div class="pillar-title">Volvés a operar con rapidez y foco</div>
+        <div class="pillar-title">Recuperación cognitiva</div>
         <p class="pillar-body">Revertimos la fatiga desde la raíz para que vuelvas a operar con rapidez y foco. Claridad mental para tomar decisiones como antes.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.3s">
         <span class="pillar-num">03 ·</span>
-        <div class="pillar-title">Datos reales, no suposiciones</div>
+        <div class="pillar-title">Acompañamiento de alto nivel</div>
         <p class="pillar-body">Seguimiento directo y sin vueltas. Medimos datos reales — laboratorios, glucemias, composición corporal — para darte resultados, no suposiciones.</p>
       </div>
     </div>
@@ -495,12 +675,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <span class="testimonial-name">Claudio M.</span>
           <span class="testimonial-role">CEO · Empresa de Logística</span>
         </div>
-        <div class="testimonial-results">
-          <span class="results-title">Claudio logró en 12 semanas:</span>
-          <span class="result-item">✅ Hemoglobina glicosilada de 11.5 a 6.8</span>
-          <span class="result-item">✅ Glucosa de 250 a 135</span>
-          <span class="result-item">✅ Triglicéridos de 492 a 214</span>
-        </div>
       </div>
       <div class="video-slot-wrap">
         <div class="video-slot" id="video-2">
@@ -517,60 +691,14 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <span class="testimonial-name">Mario S.</span>
           <span class="testimonial-role">Director Comercial · Industria Manufacturera</span>
         </div>
-        <div class="testimonial-results">
-          <span class="results-title">Mario logró en 12 semanas:</span>
-          <span class="result-item">✅ Glucemia: 91 — como hacía más de 10 años no lograba</span>
-          <span class="result-item">✅ HbA1c: 5.6 — fuera de rango diabético, sin medicación</span>
-          <span class="result-item">✅ HDL: 69 — colesterol bueno en rango óptimo</span>
-          <span class="result-item">✅ Triglicéridos: 65 — su cuerpo aprendió a usar grasa como energía</span>
-        </div>
       </div>
     </div>
 
     <div class="stats-row fade-up" style="transition-delay:.2s; margin-top:16px">
-      <div class="stat-box">
-        <span class="stat-val">Sin pausar</span>
-        <span class="stat-lbl">tu vida</span>
-        <span class="stat-desc">Adaptado a tu agenda, tus viajes y tus reuniones desde el día uno</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-val">En la</span>
-        <span class="stat-lbl">primera semana</span>
-        <span class="stat-desc">La mayoría reporta cambios en energía y sueño antes de los 7 días</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-val">Solo</span>
-        <span class="stat-lbl">tuyo</span>
-        <span class="stat-desc">Cada protocolo se construye desde tus laboratorios, tu historia y tu contexto</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-val">Sin</span>
-        <span class="stat-lbl">medicación de por vida</span>
-        <span class="stat-desc">El objetivo es que tu cuerpo no dependa de lo que hoy necesita para funcionar</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- VOZ DE NINA -->
-<section class="sec-nina-voice">
-  <div class="container">
-    <div class="nina-voice-wrap fade-up">
-      <div class="nina-voice-photo">
-        <!--
-          REEMPLAZÁ CON:
-          <img src="nina-perfil.jpg" alt="Nina Alvarez Tatar">
-        -->
-        <img src="data:image/jpeg;base64,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" alt="Lic. Nina Alvarez Tatar" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="nina-voice-text">
-        <blockquote>
-          Trabajo exclusivamente con empresarios y profesionales porque sé que su problema no es falta de voluntad — es que ningún sistema de salud convencional está diseñado para su ritmo de vida. Cada persona que llega a una sesión conmigo tiene un protocolo construido desde sus propios datos, su historia y su contexto. Eso es exactamente lo que Reset Metabólico resuelve.
-        </blockquote>
-        <cite>Lic. Nina Alvarez Tatar · Fundadora de Reset Metabólico</cite>
-      </div>
+      <div class="stat-box"><span class="stat-val">7d</span><span class="stat-lbl">Primeros resultados</span></div>
+      <div class="stat-box"><span class="stat-val">12s</span><span class="stat-lbl">Duración del programa</span></div>
+      <div class="stat-box"><span class="stat-val">1:1</span><span class="stat-lbl">Acompañamiento exclusivo</span></div>
+      <div class="stat-box"><span class="stat-val">100%</span><span class="stat-lbl">Basado en tus datos</span></div>
     </div>
   </div>
 </section>
@@ -584,8 +712,10 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="sec-label" style="justify-content:center">Pre-calificación</div>
       <h2>Completá tu perfil<br><em>en pocos pasos.</em></h2>
       <div class="form-friction">
-        Este formulario permite que Nina revise tu caso antes de la llamada y llegue preparada para vos. Son 2 minutos.
+        <strong>Nota:</strong> El Reset Metabólico es una intervención de alta inversión económica y de compromiso personal. Completá este diagnóstico solo si estás decidido a priorizar tu rendimiento, tu salud y tu bienestar esta misma semana. Evaluamos cada perfil antes de habilitar el acceso a la agenda.
       </div>
+      <p>Este breve formulario permite que Nina revise tu caso personalmente y reserve tu Sesión de Diagnóstico Gratuita Inicial.</p>
+    </div>
     </div>
 
     <div class="form-wrap fade-up" style="transition-delay:.1s">
@@ -670,31 +800,30 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <label class="opt"><input type="radio" name="q3" value="energia"> Falta de energía — me canso rápido o me siento sin fuerza</label>
           <label class="opt"><input type="radio" name="q3" value="sueno"> Alteración del sueño — no descanso bien o me desvelo</label>
           <label class="opt"><input type="radio" name="q3" value="sobrepeso"> Sobrepeso — no logro bajar y me siento pesado/a</label>
+          <label class="opt"><input type="radio" name="q3" value="ereccion"> Disfunción eréctil</label>
           <label class="opt"><input type="radio" name="q3" value="nebulosa"> Me cuesta concentrarme o pensar con claridad</label>
-          <label class="opt"><input type="radio" name="q3" value="ereccion"> Pérdida de vitalidad e impacto en vida íntima</label>
         </div>
       </div>
 
       <div class="form-step">
         <span class="step-tag">Pregunta 05 / 06</span>
-        <div class="step-q">¿Cuál es tu disponibilidad horaria para la videollamada?</div>
+        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q5" value="manana"> Mañanas (9 a 13hs)</label>
-          <label class="opt"><input type="radio" name="q5" value="tarde"> Tardes (14 a 18hs)</label>
-          <label class="opt"><input type="radio" name="q5" value="noche"> Noches (18 a 21hs)</label>
+          <label class="opt"><input type="radio" name="q4" value="1300-1700"> De USD 1.300 a USD 1.700</label>
+          <label class="opt"><input type="radio" name="q4" value="1000-1500"> De USD 1.000 a USD 1.500</label>
+          <label class="opt"><input type="radio" name="q4" value="600-1000"> De USD 600 a USD 1.000</label>
+          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
         </div>
+        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
       </div>
 
       <div class="form-step">
         <span class="step-tag">Pregunta 06 / 06</span>
-        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
+        <div class="step-q">Nuestra agenda es extremadamente limitada. Si te aprobamos el acceso al calendario, ¿te comprometés al 100% a asistir a la videollamada de diagnóstico?</div>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q4" value="1500-1700"> De USD 1.500 a USD 1.700</label>
-          <label class="opt"><input type="radio" name="q4" value="1000-1499"> De USD 1.000 a USD 1.499</label>
-          <label class="opt"><input type="radio" name="q4" value="600-999"> De USD 600 a USD 999</label>
-          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
+          <label class="opt"><input type="radio" name="q5" value="si"> Sí, soy responsable y me comprometo a asistir</label>
+          <label class="opt"><input type="radio" name="q5" value="no"> No, no puedo asegurar asistir — por favor, no agendes</label>
         </div>
-        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
       </div>
 
       <div class="form-cta">
@@ -721,8 +850,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   <div class="container">
     <div class="cta-inner fade-up">
       <span class="cta-pre">El primer paso es el más importante</span>
-      <p class="cta-h">Cuando llegues a la llamada, Nina ya leyó tu caso. No es una consulta genérica — es una sesión preparada para vos.</p>
-      <h2 class="cta-h-main">Tu empresa necesita tu mejor versión.<em>Volvé a liderar.</em></h2>
+      <h2 class="cta-h">Tu empresa necesita tu mejor versión.<em>Volvé a liderar.</em></h2>
       <p class="cta-sub">Completá el formulario y Nina revisa tu caso personalmente para ver si el programa es para vos.</p>
       <div class="btn-group">
         <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Estratégico</a>
@@ -743,20 +871,31 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzMVD6KJGi67CsruRu_MTchkzlMnx7eJslLyRXi6aaDD1dUcplDAGGPnjwK192ZcdORZg/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxHj3wL63mgGzkDN5o4qKa3DhDFTOW3cgannEZ6PdHHTXBiK9j9w8ECHiR0pkik6-atxA/exec';
+
+  // Scroll reveal
+  // Forzar scroll al inicio — evita que Meta/Instagram mande directo al formulario
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+    }, 100);
+  });
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
+  // Activar sonido del VSL
   function activateSound() {
     const vslPlayer = new Vimeo.Player(document.getElementById('vsl-main'));
     vslPlayer.setVolume(1);
     vslPlayer.setMuted(false);
-    document.getElementById('sound-btn').classList.add('hidden');
+    const btn = document.getElementById('sound-btn');
+    btn.classList.add('hidden');
   }
 
+  // Autoplay VSL al hacer scroll (muted para cumplir política del navegador)
   let vslPlayed = false;
   const vslSection = document.querySelector('.sec-vsl');
   const vslObs = new IntersectionObserver(entries => {
@@ -770,6 +909,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   }, { threshold: 0.3 });
   if (vslSection) vslObs.observe(vslSection);
 
+  // Autoplay primer testimonio al hacer scroll
   let video1played = false;
   const video1section = document.getElementById('video-1');
   const scrollObs = new IntersectionObserver(entries => {
@@ -783,6 +923,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   }, { threshold: 0.5 });
   if (video1section) scrollObs.observe(video1section);
 
+  // Radio highlight
   document.querySelectorAll('.opt').forEach(label => {
     label.addEventListener('click', function() {
       const name = this.querySelector('input').name;
@@ -792,6 +933,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     });
   });
 
+  // Clear error on text input
   document.querySelectorAll('.field-input').forEach(input => {
     input.addEventListener('input', function() {
       this.classList.remove('input-error');
@@ -800,10 +942,12 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     });
   });
 
+  // Validation + submit
   document.getElementById('form-btn').addEventListener('click', function(e) {
     e.preventDefault();
     let valid = true;
 
+    // Validate text fields
     ['nombre', 'apellido', 'celular', 'email'].forEach(name => {
       const input = document.querySelector(`input[name="${name}"]`);
       const step = input.closest('.form-step');
@@ -814,6 +958,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       }
     });
 
+    // Validate profession select
     const profesion = document.querySelector('select[name="profesion"]');
     if (!profesion.value) {
       profesion.classList.add('input-error');
@@ -821,6 +966,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       valid = false;
     }
 
+    // Validate radio groups
     ['q1', 'q2', 'q3', 'q4', 'q5'].forEach(name => {
       const selected = document.querySelector(`input[name="${name}"]:checked`);
       const step = document.querySelector(`input[name="${name}"]`).closest('.form-step');
@@ -836,6 +982,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       return;
     }
 
+    // Capturar UTMs de la URL
     const params = new URLSearchParams(window.location.search);
     const utms = {
       utm_source:   params.get('utm_source')   || 'directo',
@@ -845,8 +992,11 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       utm_term:     params.get('utm_term')     || ''
     };
 
+    // Recopilar datos
+    // Verificar si descalifica
     const q4val = document.querySelector('input[name="q4"]:checked').value;
-    const descalifica = q4val === 'no';
+    const q5val = document.querySelector('input[name="q5"]:checked').value;
+    const descalifica = q4val === 'no' || q5val === 'no';
 
     const data = {
       nombre:    document.querySelector('input[name="nombre"]').value.trim(),
@@ -858,16 +1008,18 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       q2: document.querySelector('input[name="q2"]:checked').value,
       q3: document.querySelector('input[name="q3"]:checked').value,
       q4: q4val,
-      q5: document.querySelector('input[name="q5"]:checked').value,
+      q5: q5val,
       fecha: new Date().toLocaleString('es-AR'),
       ...utms
     };
 
+    // Cambiar texto del botón mientras envía
     const btn = document.getElementById('form-btn');
     btn.textContent = 'Enviando...';
     btn.style.opacity = '0.7';
     btn.style.pointerEvents = 'none';
 
+    // Enviar a Google Apps Script
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
