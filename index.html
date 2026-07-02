@@ -21,6 +21,16 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x724ybg2cg");
+</script>
+<!-- End Microsoft Clarity -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -395,8 +405,21 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
   .stat-box { background: #3a7232; padding: 32px 20px; text-align: center; transition: background 0.3s; }
   .stat-box:hover { background: #2d5e28; }
-  .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 700; color: #ffffff; display: block; margin-bottom: 6px; }
+  .stat-box { background: #3a7232; padding: 28px 16px; text-align: center; transition: background 0.3s; }
+  .stat-box:hover { background: #2d5e28; }
+  .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; font-style: italic; color: #ffffff; display: block; margin-bottom: 4px; line-height: 1.2; }
+  .stat-lbl { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; font-style: italic; color: rgba(255,255,255,0.9); display: block; margin-bottom: 8px; }
+  .stat-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; font-family: 'Jost', sans-serif; }
   .stat-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+
+
+  /* VOZ DE NINA */
+  .sec-nina-voice { padding: 80px 0; background: #f5f1ea; }
+  .nina-voice-wrap { display: flex; align-items: flex-start; gap: 40px; max-width: 720px; margin: 0 auto; }
+  .nina-voice-photo { width: 90px; height: 90px; border-radius: 50%; background: #e0edd8; border: 2px solid rgba(58,114,50,0.2); flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .nina-voice-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .nina-voice-text blockquote { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2.5vw, 22px); font-style: italic; font-weight: 500; color: #2e4228; line-height: 1.75; margin-bottom: 16px; }
+  .nina-voice-text cite { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #3a7232; font-style: normal; }
 
   /* ── FORM ── */
   .sec-form { padding: 100px 0; background: #f5f1ea; }
@@ -481,6 +504,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     .stats-row { grid-template-columns: repeat(2,1fr); }
     .footer-inner { flex-direction: column; text-align: center; }
     .form-step { padding: 28px 22px; }
+    .nina-voice-wrap { flex-direction: column; align-items: center; text-align: center; }
   }
 </style>
 </head>
@@ -513,8 +537,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="fade-up">
         <div class="hero-eyebrow">Programa 1 a 1 · Exclusivo</div>
         <h1>Tomás decisiones críticas todos los días,<em>pero tu energía y tu cuerpo ya no están a la altura.</em></h1>
-        <p class="hero-sub">Un programa 1 a 1 para empresarios, profesionales y líderes de alto rendimiento con diabetes tipo 2, prediabetes o sobrepeso que necesitan resultados reales sin perder tiempo en estrategias que no funcionan.</p>
-        <p class="hero-sub2">Normalizá tus glucemias, bajá kilos de grasa aumentando masa muscular y recuperá tu energía, motivación y claridad mental sin soluciones genéricas y sin depender de medicación a largo plazo.</p>
+        <p class="hero-sub">Un programa 1 a 1 para empresarios y profesionales con diabetes tipo 2, prediabetes o sobrepeso que necesitan resultados reales sin frenar su vida.</p>
         <a href="#diagnostico" class="btn btn-primary">Quiero saber más</a>
       </div>
       <div class="hero-img-wrap fade-up" style="transition-delay:.2s">
@@ -626,22 +649,22 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="fade-up">
       <div class="sec-label">La solución</div>
       <div class="mech-statement">No es otra dieta de cajón.<br><em>Es una intervención metabólica diseñada para agendas colapsadas.</em></div>
-      <p class="mech-intro">El programa Reset Metabólico de la Lic. Nina Alvarez Tatar trabaja la causa raíz — reordena tu reloj biológico y tu metabolismo en tu contexto real. Porque bajar de peso y/o regular tus glucemias de forma definitiva requieren un plan hecho para vos y de forma integral, no para "el paciente promedio".</p>
+      <p class="mech-intro">Trabajo la causa raíz — reordeno tu reloj biológico y tu metabolismo en tu contexto real. Porque bajar de peso y regular tus glucemias de forma definitiva requiere un plan hecho para vos, no para el paciente promedio.</p>
     </div>
     <div class="pillars">
       <div class="pillar fade-up" style="transition-delay:.1s">
         <span class="pillar-num">01 ·</span>
-        <div class="pillar-title">Biología aplicada a tu rutina</div>
+        <div class="pillar-title">Tu agenda es el punto de partida</div>
         <p class="pillar-body">No te pedimos que frenes tu vida. Adaptamos la estrategia a tus horarios, no al revés. Tu agenda es el punto de partida, no el obstáculo.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.2s">
         <span class="pillar-num">02 ·</span>
-        <div class="pillar-title">Recuperación cognitiva</div>
+        <div class="pillar-title">Volvés a operar con rapidez y foco</div>
         <p class="pillar-body">Revertimos la fatiga desde la raíz para que vuelvas a operar con rapidez y foco. Claridad mental para tomar decisiones como antes.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.3s">
         <span class="pillar-num">03 ·</span>
-        <div class="pillar-title">Acompañamiento de alto nivel</div>
+        <div class="pillar-title">Datos reales, no suposiciones</div>
         <p class="pillar-body">Seguimiento directo y sin vueltas. Medimos datos reales — laboratorios, glucemias, composición corporal — para darte resultados, no suposiciones.</p>
       </div>
     </div>
@@ -675,6 +698,12 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <span class="testimonial-name">Claudio M.</span>
           <span class="testimonial-role">CEO · Empresa de Logística</span>
         </div>
+        <div class="testimonial-results">
+          <span class="results-title">Claudio logró en 12 semanas:</span>
+          <span class="result-item">✅ Hemoglobina glicosilada de 11.5 a 6.8</span>
+          <span class="result-item">✅ Glucosa de 250 a 135</span>
+          <span class="result-item">✅ Triglicéridos de 492 a 214</span>
+        </div>
       </div>
       <div class="video-slot-wrap">
         <div class="video-slot" id="video-2">
@@ -691,14 +720,37 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <span class="testimonial-name">Mario S.</span>
           <span class="testimonial-role">Director Comercial · Industria Manufacturera</span>
         </div>
+        <div class="testimonial-results">
+          <span class="results-title">Mario logró en 12 semanas:</span>
+          <span class="result-item">✅ Glucemia: 91 — como hacía más de 10 años no lograba</span>
+          <span class="result-item">✅ HbA1c: 5.6 — fuera de rango diabético, sin medicación</span>
+          <span class="result-item">✅ HDL: 69 — colesterol bueno en rango óptimo</span>
+          <span class="result-item">✅ Triglicéridos: 65 — su cuerpo aprendió a usar grasa como energía</span>
+        </div>
       </div>
     </div>
 
     <div class="stats-row fade-up" style="transition-delay:.2s; margin-top:16px">
-      <div class="stat-box"><span class="stat-val">7d</span><span class="stat-lbl">Primeros resultados</span></div>
-      <div class="stat-box"><span class="stat-val">12s</span><span class="stat-lbl">Duración del programa</span></div>
-      <div class="stat-box"><span class="stat-val">1:1</span><span class="stat-lbl">Acompañamiento exclusivo</span></div>
-      <div class="stat-box"><span class="stat-val">100%</span><span class="stat-lbl">Basado en tus datos</span></div>
+      <div class="stat-box">
+        <span class="stat-val">Sin pausar</span>
+        <span class="stat-lbl">tu vida</span>
+        <span class="stat-desc">Adaptado a tu agenda, tus viajes y tus reuniones desde el día uno</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-val">En la</span>
+        <span class="stat-lbl">primera semana</span>
+        <span class="stat-desc">La mayoría reporta cambios en energía y sueño antes de los 7 días</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-val">Solo</span>
+        <span class="stat-lbl">tuyo</span>
+        <span class="stat-desc">Cada protocolo se construye desde tus laboratorios, tu historia y tu contexto</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-val">Sin</span>
+        <span class="stat-lbl">medicación de por vida</span>
+        <span class="stat-desc">El objetivo es que tu cuerpo no dependa de lo que hoy necesita para funcionar</span>
+      </div>
     </div>
   </div>
 </section>
@@ -712,10 +764,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="sec-label" style="justify-content:center">Pre-calificación</div>
       <h2>Completá tu perfil<br><em>en pocos pasos.</em></h2>
       <div class="form-friction">
-        <strong>Nota:</strong> El Reset Metabólico es una intervención de alta inversión económica y de compromiso personal. Completá este diagnóstico solo si estás decidido a priorizar tu rendimiento, tu salud y tu bienestar esta misma semana. Evaluamos cada perfil antes de habilitar el acceso a la agenda.
+        Este formulario permite que Nina revise tu caso antes de la llamada y llegue preparada para vos. Son 2 minutos.
       </div>
-      <p>Este breve formulario permite que Nina revise tu caso personalmente y reserve tu Sesión de Diagnóstico Gratuita Inicial.</p>
-    </div>
     </div>
 
     <div class="form-wrap fade-up" style="transition-delay:.1s">
@@ -800,30 +850,31 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
           <label class="opt"><input type="radio" name="q3" value="energia"> Falta de energía — me canso rápido o me siento sin fuerza</label>
           <label class="opt"><input type="radio" name="q3" value="sueno"> Alteración del sueño — no descanso bien o me desvelo</label>
           <label class="opt"><input type="radio" name="q3" value="sobrepeso"> Sobrepeso — no logro bajar y me siento pesado/a</label>
-          <label class="opt"><input type="radio" name="q3" value="ereccion"> Disfunción eréctil</label>
           <label class="opt"><input type="radio" name="q3" value="nebulosa"> Me cuesta concentrarme o pensar con claridad</label>
+          <label class="opt"><input type="radio" name="q3" value="ereccion"> Pérdida de vitalidad e impacto en vida íntima</label>
         </div>
       </div>
 
       <div class="form-step">
         <span class="step-tag">Pregunta 05 / 06</span>
-        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
+        <div class="step-q">¿Cuál es tu disponibilidad horaria para la videollamada?</div>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q4" value="1300-1700"> De USD 1.300 a USD 1.700</label>
-          <label class="opt"><input type="radio" name="q4" value="1000-1500"> De USD 1.000 a USD 1.500</label>
-          <label class="opt"><input type="radio" name="q4" value="600-1000"> De USD 600 a USD 1.000</label>
-          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
+          <label class="opt"><input type="radio" name="q5" value="manana"> Mañanas (9 a 13hs)</label>
+          <label class="opt"><input type="radio" name="q5" value="tarde"> Tardes (14 a 18hs)</label>
+          <label class="opt"><input type="radio" name="q5" value="noche"> Noches (18 a 21hs)</label>
         </div>
-        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
       </div>
 
       <div class="form-step">
         <span class="step-tag">Pregunta 06 / 06</span>
-        <div class="step-q">Nuestra agenda es extremadamente limitada. Si te aprobamos el acceso al calendario, ¿te comprometés al 100% a asistir a la videollamada de diagnóstico?</div>
+        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q5" value="si"> Sí, soy responsable y me comprometo a asistir</label>
-          <label class="opt"><input type="radio" name="q5" value="no"> No, no puedo asegurar asistir — por favor, no agendes</label>
+          <label class="opt"><input type="radio" name="q4" value="1500-1700"> De USD 1.500 a USD 1.700</label>
+          <label class="opt"><input type="radio" name="q4" value="1000-1499"> De USD 1.000 a USD 1.499</label>
+          <label class="opt"><input type="radio" name="q4" value="600-999"> De USD 600 a USD 999</label>
+          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
         </div>
+        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
       </div>
 
       <div class="form-cta">
@@ -850,7 +901,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   <div class="container">
     <div class="cta-inner fade-up">
       <span class="cta-pre">El primer paso es el más importante</span>
-      <h2 class="cta-h">Tu empresa necesita tu mejor versión.<em>Volvé a liderar.</em></h2>
+      <p class="cta-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:500;font-style:italic;color:rgba(255,255,255,0.85);margin-bottom:16px;">Cuando llegues a la llamada, Nina ya leyó tu caso. No es una consulta genérica — es una sesión preparada para vos.</p>
+      <h2 class="cta-h" style="font-size:clamp(36px,5vw,58px);">Tu empresa necesita tu mejor versión.<em>Volvé a liderar.</em></h2>
       <p class="cta-sub">Completá el formulario y Nina revisa tu caso personalmente para ver si el programa es para vos.</p>
       <div class="btn-group">
         <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Estratégico</a>
@@ -871,7 +923,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxHj3wL63mgGzkDN5o4qKa3DhDFTOW3cgannEZ6PdHHTXBiK9j9w8ECHiR0pkik6-atxA/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzMVD6KJGi67CsruRu_MTchkzlMnx7eJslLyRXi6aaDD1dUcplDAGGPnjwK192ZcdORZg/exec';
 
   // Scroll reveal
   // Forzar scroll al inicio — evita que Meta/Instagram mande directo al formulario
@@ -995,8 +1047,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     // Recopilar datos
     // Verificar si descalifica
     const q4val = document.querySelector('input[name="q4"]:checked').value;
-    const q5val = document.querySelector('input[name="q5"]:checked').value;
-    const descalifica = q4val === 'no' || q5val === 'no';
+    const descalifica = q4val === 'no';
 
     const data = {
       nombre:    document.querySelector('input[name="nombre"]').value.trim(),
@@ -1008,7 +1059,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       q2: document.querySelector('input[name="q2"]:checked').value,
       q3: document.querySelector('input[name="q3"]:checked').value,
       q4: q4val,
-      q5: q5val,
+      q5: document.querySelector('input[name="q5"]:checked').value,
       fecha: new Date().toLocaleString('es-AR'),
       ...utms
     };
