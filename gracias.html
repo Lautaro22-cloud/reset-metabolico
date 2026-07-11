@@ -106,11 +106,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   .wa-icon { font-size: 22px; }
   .wa-disclaimer { font-size: 13px; color: var(--text-muted); margin-top: 12px; line-height: 1.7; text-align: center; }
 
-  .testimonios-section { margin-top: 48px; }
-  .section-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; display: block; text-align: center; }
-  .videos-row { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-  .video-slot { background: #000; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-
   .video-nina-section { margin-bottom: 8px; }
   .video-nina-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; text-align: center; }
   .video-nina-wrap { position: relative; max-width: 360px; margin: 0 auto; box-shadow: 0 8px 40px rgba(0,0,0,0.15); }
@@ -118,6 +113,11 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
   .sound-btn-nina:hover { background: rgba(58,114,50,0.9); }
   .sound-btn-nina.hidden { opacity: 0; pointer-events: none; }
   @keyframes pulse-sound { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.04); } }
+
+  .testimonios-section { margin-top: 48px; }
+  .section-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; display: block; text-align: center; }
+  .videos-row { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .video-slot { background: #000; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 
   footer { background: #1e2e1c; border-top: 1px solid rgba(60,100,50,0.2); padding: 28px 40px; text-align: center; position: relative; z-index: 1; }
   .footer-note { font-size: 12px; color: #5a7a54; line-height: 1.8; max-width: 500px; margin: 0 auto; }
@@ -148,17 +148,79 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     <span class="tag fade-in d1">Perfil recibido</span>
     <h1 class="fade-in d2">Tu perfil califica para una<em> Sesión de Diagnóstico conmigo.</em></h1>
     <p class="page-intro fade-in d2">
-      Ya recibí tu información — te contacto personalmente en cuanto vuelva.
+      En esa llamada vamos a evaluar juntos si el programa es la solución adecuada para tu caso. Para elegir tu horario, escribime por WhatsApp 👇
     </p>
   </div>
 
   <div class="ornament fade-in d2"><span>✦</span></div>
 
-  <!-- MENSAJE DE RECESO -->
+  <!-- VIDEO DE NINA -->
+  <div class="video-nina-section fade-in d3">
+    <span class="video-nina-label">Un mensaje de Nina para vos</span>
+    <div class="video-nina-wrap">
+      <div style="padding:177.82% 0 0 0;position:relative;">
+        <iframe id="video-nina"
+          src="https://player.vimeo.com/video/1200586394?title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1&autoplay=1&player_id=video-nina&app_id=58479"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+          title="Video Nina">
+        </iframe>
+      </div>
+      <div class="sound-btn-nina" id="sound-btn-nina" onclick="activateSoundNina()">
+        <span>🔇</span><span>Activar sonido</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ornament fade-in d3"><span>✦</span></div>
+
+  <!-- WHATSAPP -->
   <div class="wa-main fade-in d3">
-    <span class="wa-main-label">Un mensaje de Nina</span>
-    <p style="font-size:17px;line-height:1.9;color:#2e4228;">Hola, soy Nina. Estoy tomándome unos días de descanso y vuelvo el <strong>sábado 11 de julio</strong>. Ya recibí tu perfil y lo voy a revisar personalmente cuando regrese — ese mismo día te escribo para coordinar nuestra sesión.</p>
-    <p style="font-size:17px;line-height:1.9;color:#2e4228;margin-top:16px;">¡Hasta pronto!</p>
+    <span class="wa-main-label">Siguiente paso</span>
+    <h2>Coordinamos por WhatsApp<em> — respondo personalmente.</em></h2>
+    <p>Atiendo cada consulta yo misma. Escribime por WhatsApp y te respondo para coordinar el día y horario de tu videollamada de diagnóstico.</p>
+
+    <div class="steps-box">
+      <span class="steps-box-title">¿Cómo hacerlo? Son 3 pasos simples</span>
+
+      <div id="steps-ios" style="display:none">
+        <div class="step-row"><span class="step-num">1</span><span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span></div>
+        <div class="step-row"><span class="step-num">2</span><span class="step-text">Se va a abrir un cartel preguntando <strong>"¿Abrir en WA Business?"</strong> — tocá <strong>Abrir</strong>. Esto es normal, es solo una confirmación de tu celular</span></div>
+        <div class="step-row"><span class="step-num">3</span><span class="step-text">Si aparecen dos opciones (<strong>Mensaje</strong> / <strong>WhatsApp Business</strong>), elegí <strong>WhatsApp Business</strong>. El mensaje ya está escrito — solo tocá <strong>Enviar</strong></span></div>
+      </div>
+
+      <div id="steps-android" style="display:none">
+        <div class="step-row"><span class="step-num">1</span><span class="step-text">Tocá el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span></div>
+        <div class="step-row"><span class="step-num">2</span><span class="step-text">Se va a abrir WhatsApp directamente. Si aparece un selector de apps, elegí <strong>WhatsApp Business</strong></span></div>
+        <div class="step-row"><span class="step-num">3</span><span class="step-text">El mensaje ya está escrito — solo tocá <strong>Enviar</strong> y listo. Nina te responde a la brevedad</span></div>
+      </div>
+
+      <div id="steps-default" style="display:none">
+        <div class="step-row"><span class="step-num">1</span><span class="step-text">Hacé clic en el botón verde <strong>"Escribirle a Nina por WhatsApp"</strong> que está más abajo</span></div>
+        <div class="step-row"><span class="step-num">2</span><span class="step-text">Se va a abrir WhatsApp Web o la app de escritorio con el mensaje ya escrito</span></div>
+        <div class="step-row"><span class="step-num">3</span><span class="step-text">Solo hacé clic en <strong>Enviar</strong> — Nina te responde a la brevedad para coordinar tu videollamada</span></div>
+      </div>
+    </div>
+
+    <div class="reassurance">
+      <p>💡 <strong>¿Se abrió WhatsApp y saliste de esta página?</strong> Asegurate de haber enviado el mensaje antes de cerrar la app.</p>
+    </div>
+
+    <div class="message-preview">
+      <span class="message-preview-label">Mensaje que se va a enviar</span>
+      <div class="wa-bubble">Hola Nina, completé mi perfil para el Reset Metabólico. Quiero saber si el programa es para mí, ¿cuándo podemos hablar?</div>
+    </div>
+
+    <p class="response-time">Respondo personalmente — en general contesto dentro de las 2 horas siguientes en horario laboral.</p>
+
+    <div class="wa-btn-wrap">
+      <button class="wa-btn" onclick="abrirWhatsApp()">
+        <span class="wa-icon">💬</span>
+        Escribir a Nina por WhatsApp
+      </button>
+      <p class="wa-disclaimer">Al hacer clic se abre WhatsApp con el mensaje ya escrito. Solo tocá Enviar.</p>
+    </div>
   </div>
 
   <!-- TESTIMONIOS -->
@@ -186,6 +248,37 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
+  function activateSoundNina() {
+    const player = new Vimeo.Player(document.getElementById('video-nina'));
+    player.setVolume(1);
+    player.setMuted(false);
+    document.getElementById('sound-btn-nina').classList.add('hidden');
+  }
+
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+  const isAndroid = /Android/i.test(ua);
+  if (isIOS) {
+    document.getElementById('steps-ios').style.display = 'block';
+  } else if (isAndroid) {
+    document.getElementById('steps-android').style.display = 'block';
+  } else {
+    document.getElementById('steps-default').style.display = 'block';
+  }
+
+  function abrirWhatsApp() {
+    const texto = 'Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F';
+    const urlWeb = 'https://wa.me/5492616013554?text=' + texto;
+    const urlApp = 'whatsapp://send?phone=5492616013554&text=' + texto;
+    fbq('track', 'Contact');
+    setTimeout(function() {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        window.location.href = urlApp;
+      } else {
+        window.open(urlWeb, '_blank');
+      }
+    }, 300);
+  }
 </script>
 
 </body>
