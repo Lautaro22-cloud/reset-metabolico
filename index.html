@@ -421,6 +421,22 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   .nina-voice-text blockquote { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2.5vw, 22px); font-style: italic; font-weight: 500; color: #2e4228; line-height: 1.75; margin-bottom: 16px; }
   .nina-voice-text cite { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #3a7232; font-style: normal; }
 
+  /* ── NINA BIO ── */
+  .sec-nina-bio { padding: 100px 0; background: #f5f1ea; }
+  .bio-text { font-size: 17px; line-height: 1.9; color: #3a4e36; margin-bottom: 20px; }
+  .bio-quote { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 500; color: #4a6a44; margin: 32px 0; line-height: 1.65; border-left: 3px solid #5e9454; padding-left: 20px; }
+
+  /* ── PARA VOS ── */
+  .sec-para-vos { padding: 100px 0; background: #eceae0; }
+  .para-vos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .para-vos-card { background: #ffffff; border: 1px solid rgba(60,100,50,0.15); padding: 36px 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .para-vos-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1e2e1c; margin-bottom: 24px; }
+  .para-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .para-list li { font-size: 15px; color: #3a4e36; line-height: 1.65; display: flex; gap: 12px; align-items: flex-start; }
+  .check-si { color: #3a7232; font-weight: 700; flex-shrink: 0; font-size: 16px; margin-top: 2px; }
+  .check-no { color: #b43232; font-weight: 700; flex-shrink: 0; font-size: 16px; margin-top: 2px; }
+  @media (max-width: 768px) { .para-vos-grid { grid-template-columns: 1fr; } }
+
   /* ── FORM ── */
   .sec-form { padding: 100px 0; background: #f5f1ea; }
   .sec-form::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(94,148,84,0.05) 0%, transparent 65%); pointer-events: none; }
@@ -513,7 +529,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 <!-- NAV -->
 <nav>
   <span class="nav-logo">Lic. Nina Alvarez Tatar · Reset Metabólico</span>
-  <a href="#diagnostico" class="nav-cta">Solicitar diagnóstico</a>
+  <a href="#diagnostico" class="nav-cta">Agendá tu consulta sin cargo</a>
 </nav>
 
 <!-- HERO -->
@@ -536,9 +552,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="hero-grid">
       <div class="fade-up">
         <div class="hero-eyebrow">Programa 1 a 1 · Exclusivo</div>
-        <h1>Tomás decisiones críticas todos los días,<em>pero tu energía y tu cuerpo ya no están a la altura.</em></h1>
-        <p class="hero-sub">Un programa 1 a 1 para empresarios y profesionales con diabetes tipo 2, prediabetes o sobrepeso que necesitan resultados reales sin frenar su vida.</p>
-        <a href="#diagnostico" class="btn btn-primary">Quiero saber más</a>
+        <h1>Neblina mental, energía en caída y una glucosa<em>que no responde ni con pastillas ni con dietas.</em></h1>
+        <p class="hero-sub">Reset Metabólico es una intervención biológica de 12 semanas — no una dieta — para revertir la causa raíz y recuperar tu foco, tu energía y tu vitalidad.</p>
+        <a href="#diagnostico" class="btn btn-primary">Agendá tu consulta sin cargo</a>
       </div>
       <div class="hero-img-wrap fade-up" style="transition-delay:.2s">
         <div class="hero-img">
@@ -596,9 +612,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
         <span class="sound-text">Activar sonido</span>
       </div>
     </div>
-    <p class="vsl-caption">En este video Nina te explica exactamente cómo personas con diabetes tipo 2 normalizaron sus glucemias sin cambiar su medicación en las primeras semanas.</p>
+    <p class="vsl-caption">En este video te explico exactamente cómo mis pacientes con diabetes tipo 2 normalizaron sus glucemias sin cambiar su medicación en las primeras semanas.</p>
     <div class="vsl-cta">
-      <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Estratégico</a>
+      <a href="#diagnostico" class="btn btn-primary">Agendá tu consulta sin cargo</a>
     </div>
   </div>
 </section>
@@ -610,7 +626,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="sec-label">El problema</div>
       <h2>En tu trabajo, tenés el control.<br><em>En tu cuerpo, sentís que algo se rompió.</em></h2>
       <p class="conflict-text">Sos una persona activa. Tenés responsabilidades, decisiones importantes, gente que depende de vos, una familia.<br><br>Pero hace tiempo sentís que tu energía no acompaña… y no sabés por qué.</p>
-      <p class="conflict-quote">La medicina convencional te da indicaciones generales, medicación, te pide que hagas dieta y nadie te explica por qué cada día te sentís peor, ni se toman el tiempo para acompañarte a sanarte desde la raíz.</p>
+      <p class="conflict-quote">La medicina convencional te da indicaciones generales, medicación, te pide que hagas dieta y nadie te explica por qué cada día te sentís peor, ni se toma el tiempo para acompañarte a sanar desde la raíz.</p>
       <div class="pain-label">¿Te identificás con alguno de estos?</div>
     </div>
     <div class="pain-grid">
@@ -629,6 +645,22 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
         <div class="pain-title">Pérdida de vitalidad</div>
         <p class="pain-body">Un metabolismo frenado que afecta tu confianza, tu físico y tu intimidad. Sentís que tu cuerpo ya no acompaña lo que tu mente todavía quiere lograr.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUIÉN TE ACOMPAÑA -->
+<section class="sec-nina-bio">
+  <div class="container">
+    <div class="fade-up">
+      <div class="sec-label">Quién te acompaña</div>
+      <h2>Yo no leí sobre esto.<br><em>Lo viví.</em></h2>
+      <p class="bio-text">A los 26 años, con una agenda que combinaba mi trabajo en empresas como Holcim, Coca-Cola y Cervecería Quilmes con mi actividad hospitalaria, mi cuerpo colapsó.</p>
+      <p class="bio-text">La respuesta de la medicina convencional fue ansiolíticos para callar los síntomas. Yo elegí otra cosa: investigar, experimentar en mí misma, y encontrar la causa raíz de lo que me estaba pasando.</p>
+      <blockquote class="bio-quote">Lo que descubrí en ese proceso es la base de todo lo que hago hoy con mis pacientes. No trato enfermedades. Encuentro por qué aparecieron — y las revierto.</blockquote>
+      <p class="bio-text">Hoy soy Licenciada en Nutrición, especializada en nutrición evolutiva, estilo de vida ancestral y microbiota, y ayudo a hombres en puestos de alta responsabilidad a remitir las enfermedades metabólicas modernas sin resignar su ritmo de vida — porque yo tampoco quise resignar el mío.</p>
     </div>
   </div>
 </section>
@@ -655,7 +687,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="pillar fade-up" style="transition-delay:.1s">
         <span class="pillar-num">01 ·</span>
         <div class="pillar-title">Tu agenda es el punto de partida</div>
-        <p class="pillar-body">No te pedimos que frenes tu vida. Adaptamos la estrategia a tus horarios, no al revés. Tu agenda es el punto de partida, no el obstáculo.</p>
+        <p class="pillar-body">No te pido que frenes tu vida. Adapto la estrategia a tus horarios, no al revés. Tu agenda es el punto de partida, no el obstáculo.</p>
       </div>
       <div class="pillar fade-up" style="transition-delay:.2s">
         <span class="pillar-num">02 ·</span>
@@ -665,7 +697,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="pillar fade-up" style="transition-delay:.3s">
         <span class="pillar-num">03 ·</span>
         <div class="pillar-title">Datos reales, no suposiciones</div>
-        <p class="pillar-body">Seguimiento directo y sin vueltas. Medimos datos reales — laboratorios, glucemias, composición corporal — para darte resultados, no suposiciones.</p>
+        <p class="pillar-body">Trabajo con datos reales — laboratorios, glucemias, composición corporal — para darte resultados concretos, no suposiciones.</p>
       </div>
     </div>
   </div>
@@ -679,7 +711,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     <div class="social-head fade-up">
       <div class="sec-label" style="justify-content:center">Evidencia</div>
       <h2>Los datos <em>no mienten.</em></h2>
-      <p class="social-sub">Resultados reales de personas que recuperaron su energía, bajaron de peso y mejoraron sus análisis</p>
+      <p class="social-sub">Resultados reales de personas que recuperaron su energía, bajaron de peso y mejoraron sus análisis trabajando conmigo</p>
     </div>
 
     <div class="videos-grid fade-up" style="transition-delay:.1s">
@@ -757,6 +789,38 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
 <div class="divider"></div>
 
+<div class="divider"></div>
+
+<!-- ¿ES PARA VOS? -->
+<section class="sec-para-vos">
+  <div class="container">
+    <div class="fade-up" style="text-align:center; margin-bottom:48px;">
+      <div class="sec-label" style="justify-content:center">Antes de escribirme</div>
+      <h2>¿Es Reset Metabólico<em> para vos?</em></h2>
+    </div>
+    <div class="para-vos-grid fade-up" style="transition-delay:.1s">
+      <div class="para-vos-card para-si">
+        <div class="para-vos-title">Es para vos sí:</div>
+        <ul class="para-list">
+          <li><span class="check-si">✓</span> Tenés diabetes tipo 2, prediabetes o sobrepeso y ya intentaste dietas o medicación sin resultados sostenidos</li>
+          <li><span class="check-si">✓</span> Sos empresario, directivo o profesional con una agenda que no te permite seguir protocolos genéricos</li>
+          <li><span class="check-si">✓</span> Entendés que revertir la causa raíz requiere un compromiso real de tiempo y de inversión económica</li>
+          <li><span class="check-si">✓</span> Estás listo para tomar decisiones sobre tu salud esta semana, no "cuando tengas más tiempo"</li>
+        </ul>
+      </div>
+      <div class="para-vos-card para-no">
+        <div class="para-vos-title">No es para vos si:</div>
+        <ul class="para-list">
+          <li><span class="check-no">✗</span> Buscás una solución rápida sin cambiar nada de tu rutina</li>
+          <li><span class="check-no">✗</span> No estás en condiciones de invertir en un programa de alta inversión en este momento</li>
+          <li><span class="check-no">✗</span> Preferís seguir manejando síntomas con medicación antes que atender la causa</li>
+          <li><span class="check-no">✗</span> No podés sostener un seguimiento semanal de 20-30 minutos durante 12 semanas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FORMULARIO -->
 <section class="sec-form" id="diagnostico">
   <div class="container">
@@ -764,7 +828,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       <div class="sec-label" style="justify-content:center">Pre-calificación</div>
       <h2>Completá tu perfil<br><em>en pocos pasos.</em></h2>
       <div class="form-friction">
-        Este formulario permite que Nina revise tu caso antes de la llamada y llegue preparada para vos. Son 2 minutos.
+        Este formulario me permite revisar tu caso antes de la llamada y llegar preparada para vos. Son 2 minutos.
       </div>
     </div>
 
@@ -879,7 +943,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 
       <div class="form-cta">
         <button class="btn btn-primary" id="form-btn">
-          Solicitar Diagnóstico Estratégico
+          Agendá tu consulta sin cargo
         </button>
         <p class="form-disclaimer">Al continuar, serás redirigido/a a una página de confirmación.<br>Cupos limitados — programa de acceso exclusivo.</p>
       </div>
@@ -901,11 +965,11 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   <div class="container">
     <div class="cta-inner fade-up">
       <span class="cta-pre">El primer paso es el más importante</span>
-      <p class="cta-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:500;font-style:italic;color:rgba(255,255,255,0.85);margin-bottom:16px;">Cuando llegues a la llamada, Nina ya leyó tu caso. No es una consulta genérica — es una sesión preparada para vos.</p>
+      <p class="cta-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:500;font-style:italic;color:rgba(255,255,255,0.85);margin-bottom:16px;">Cuando llegues a la llamada, ya leí tu caso. No es una consulta genérica — es una sesión preparada para vos.</p>
       <h2 class="cta-h" style="font-size:clamp(36px,5vw,58px);">Tu empresa necesita tu mejor versión.<em>Volvé a liderar.</em></h2>
-      <p class="cta-sub">Completá el formulario y Nina revisa tu caso personalmente para ver si el programa es para vos.</p>
+      <p class="cta-sub">Completá el formulario y reviso tu caso personalmente para ver si el programa es para vos.</p>
       <div class="btn-group">
-        <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Estratégico</a>
+        <a href="#diagnostico" class="btn btn-primary">Agendá tu consulta sin cargo</a>
       </div>
     </div>
   </div>
