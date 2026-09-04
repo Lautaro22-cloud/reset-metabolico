@@ -234,6 +234,17 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     background: linear-gradient(to right, transparent, rgba(107,143,94,0.25), transparent);
   }
 
+  .paso-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-align: center; margin-bottom: 24px;
+  }
+  .sec-form .paso-label {
+    color: var(--green-light, #5e9454);
+    margin-bottom: 20px;
+  }
+
   /* ── VSL ── */
   .sec-vsl { padding: 60px 0; background: #1e2e1c; }
   .vsl-wrap {
@@ -598,6 +609,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 <!-- VSL -->
 <section class="sec-vsl">
   <div class="container">
+    <div class="paso-label fade-up">Paso 1: Mirá el video</div>
     <div class="vsl-wrap">
       <iframe
         id="vsl-main"
@@ -613,11 +625,140 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       </div>
     </div>
     <p class="vsl-caption">En este video te explico exactamente cómo mis pacientes con diabetes tipo 2 normalizaron sus glucemias sin cambiar su medicación en las primeras semanas.</p>
-    <div class="vsl-cta">
-      <a href="#diagnostico" class="btn btn-primary">Agendá tu consulta sin cargo</a>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="sec-form" id="diagnostico">
+  <div class="container">
+    <div class="form-head fade-up">
+      <div class="paso-label">Paso 2: Completá tu perfil en pocos pasos</div>
+      <div class="form-friction">
+        Este formulario me permite revisar tu caso antes de la llamada y llegar preparada para vos. Son 2 minutos.
+      </div>
+    </div>
+
+    <div class="form-wrap fade-up" style="transition-delay:.1s">
+
+      <!-- DATOS DE CONTACTO -->
+      <div class="form-step">
+        <span class="step-tag">Datos de contacto</span>
+        <div class="contact-fields">
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label">Nombre</label>
+              <input type="text" name="nombre" class="field-input" placeholder="Tu nombre">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Apellido</label>
+              <input type="text" name="apellido" class="field-input" placeholder="Tu apellido">
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Número de celular</label>
+            <input type="tel" name="celular" class="field-input" placeholder="Ej: +54 9 11 1234-5678">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Email</label>
+            <input type="email" name="email" class="field-input" placeholder="tu@email.com">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 01 / 06</span>
+        <div class="step-q">¿Cuál es tu profesión u ocupación?</div>
+        <div class="field-group">
+          <select name="profesion" class="field-input field-select">
+            <option value="" disabled selected>Seleccioná una opción</option>
+            <option value="abogado">Abogado/a</option>
+            <option value="contador">Contador/a</option>
+            <option value="ingeniero">Ingeniero/a</option>
+            <option value="arquitecto">Arquitecto/a</option>
+            <option value="medico">Médico/a</option>
+            <option value="odontologo">Odontólogo/a</option>
+            <option value="farmaceutico">Farmacéutico/a</option>
+            <option value="psicologo">Psicólogo/a</option>
+            <option value="economista">Economista</option>
+            <option value="administrador">Licenciado/a en Administración</option>
+            <option value="marketing">Licenciado/a en Marketing</option>
+            <option value="sistemas">Analista / Ingeniero en Sistemas</option>
+            <option value="veterinario">Veterinario/a</option>
+            <option value="kinesiologo">Kinesiólogo/a</option>
+            <option value="nutricionista">Nutricionista</option>
+            <option value="dueno_negocio">Dueño/a de negocio o comercio</option>
+            <option value="otra">Otra profesión universitaria</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 02 / 06</span>
+        <div class="step-q">¿Cuál de estas opciones describe mejor tu situación?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1" value="dueno"> Soy dueño/a de un negocio o comercio</label>
+          <label class="opt"><input type="radio" name="q1" value="directivo"> Soy gerente, directivo o jefe en una empresa</label>
+          <label class="opt"><input type="radio" name="q1" value="profesional"> Soy profesional independiente o empleado activo</label>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 03 / 06</span>
+        <div class="step-q">¿Cuál es tu situación de salud actual?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q2" value="t2"> Tengo Diabetes Tipo 2</label>
+          <label class="opt"><input type="radio" name="q2" value="pre"> Me dijeron que tengo pre-diabetes</label>
+          <label class="opt"><input type="radio" name="q2" value="sobrepeso"> Tengo sobrepeso y me cuesta bajarlo</label>
+          <label class="opt"><input type="radio" name="q2" value="varios"> Tengo más de una de estas situaciones</label>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 04 / 06</span>
+        <div class="step-q">¿Cuál es el síntoma que más te molesta hoy?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3" value="energia"> Falta de energía — me canso rápido o me siento sin fuerza</label>
+          <label class="opt"><input type="radio" name="q3" value="sueno"> Alteración del sueño — no descanso bien o me desvelo</label>
+          <label class="opt"><input type="radio" name="q3" value="sobrepeso"> Sobrepeso — no logro bajar y me siento pesado/a</label>
+          <label class="opt"><input type="radio" name="q3" value="nebulosa"> Me cuesta concentrarme o pensar con claridad</label>
+          <label class="opt"><input type="radio" name="q3" value="ereccion"> Pérdida de vitalidad e impacto en vida íntima</label>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 05 / 06</span>
+        <div class="step-q">¿Cuál es tu disponibilidad horaria para la videollamada?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5" value="manana"> Mañanas (9 a 13hs)</label>
+          <label class="opt"><input type="radio" name="q5" value="tarde"> Tardes (14 a 18hs)</label>
+          <label class="opt"><input type="radio" name="q5" value="noche"> Noches (18 a 21hs)</label>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <span class="step-tag">Pregunta 06 / 06</span>
+        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q4" value="1500-1700"> De USD 1.500 a USD 1.700</label>
+          <label class="opt"><input type="radio" name="q4" value="1000-1499"> De USD 1.000 a USD 1.499</label>
+          <label class="opt"><input type="radio" name="q4" value="600-999"> De USD 600 a USD 999</label>
+          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
+        </div>
+        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
+      </div>
+
+      <div class="form-cta">
+        <button class="btn btn-primary" id="form-btn">
+          Agendá tu consulta sin cargo
+        </button>
+        <p class="form-disclaimer">Al continuar, serás redirigido/a a una página de confirmación.<br>Cupos limitados — programa de acceso exclusivo.</p>
+      </div>
+
     </div>
   </div>
 </section>
+
+
 
 <!-- CONFLICTO -->
 <section class="sec-conflict">
@@ -821,136 +962,6 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- FORMULARIO -->
-<section class="sec-form" id="diagnostico">
-  <div class="container">
-    <div class="form-head fade-up">
-      <div class="sec-label" style="justify-content:center">Pre-calificación</div>
-      <h2>Completá tu perfil<br><em>en pocos pasos.</em></h2>
-      <div class="form-friction">
-        Este formulario me permite revisar tu caso antes de la llamada y llegar preparada para vos. Son 2 minutos.
-      </div>
-    </div>
-
-    <div class="form-wrap fade-up" style="transition-delay:.1s">
-
-      <!-- DATOS DE CONTACTO -->
-      <div class="form-step">
-        <span class="step-tag">Datos de contacto</span>
-        <div class="contact-fields">
-          <div class="field-row">
-            <div class="field-group">
-              <label class="field-label">Nombre</label>
-              <input type="text" name="nombre" class="field-input" placeholder="Tu nombre">
-            </div>
-            <div class="field-group">
-              <label class="field-label">Apellido</label>
-              <input type="text" name="apellido" class="field-input" placeholder="Tu apellido">
-            </div>
-          </div>
-          <div class="field-group">
-            <label class="field-label">Número de celular</label>
-            <input type="tel" name="celular" class="field-input" placeholder="Ej: +54 9 11 1234-5678">
-          </div>
-          <div class="field-group">
-            <label class="field-label">Email</label>
-            <input type="email" name="email" class="field-input" placeholder="tu@email.com">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span class="step-tag">Pregunta 01 / 06</span>
-        <div class="step-q">¿Cuál es tu profesión u ocupación?</div>
-        <div class="field-group">
-          <select name="profesion" class="field-input field-select">
-            <option value="" disabled selected>Seleccioná una opción</option>
-            <option value="abogado">Abogado/a</option>
-            <option value="contador">Contador/a</option>
-            <option value="ingeniero">Ingeniero/a</option>
-            <option value="arquitecto">Arquitecto/a</option>
-            <option value="medico">Médico/a</option>
-            <option value="odontologo">Odontólogo/a</option>
-            <option value="farmaceutico">Farmacéutico/a</option>
-            <option value="psicologo">Psicólogo/a</option>
-            <option value="economista">Economista</option>
-            <option value="administrador">Licenciado/a en Administración</option>
-            <option value="marketing">Licenciado/a en Marketing</option>
-            <option value="sistemas">Analista / Ingeniero en Sistemas</option>
-            <option value="veterinario">Veterinario/a</option>
-            <option value="kinesiologo">Kinesiólogo/a</option>
-            <option value="nutricionista">Nutricionista</option>
-            <option value="dueno_negocio">Dueño/a de negocio o comercio</option>
-            <option value="otra">Otra profesión universitaria</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span class="step-tag">Pregunta 02 / 06</span>
-        <div class="step-q">¿Cuál de estas opciones describe mejor tu situación?</div>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q1" value="dueno"> Soy dueño/a de un negocio o comercio</label>
-          <label class="opt"><input type="radio" name="q1" value="directivo"> Soy gerente, directivo o jefe en una empresa</label>
-          <label class="opt"><input type="radio" name="q1" value="profesional"> Soy profesional independiente o empleado activo</label>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span class="step-tag">Pregunta 03 / 06</span>
-        <div class="step-q">¿Cuál es tu situación de salud actual?</div>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q2" value="t2"> Tengo Diabetes Tipo 2</label>
-          <label class="opt"><input type="radio" name="q2" value="pre"> Me dijeron que tengo pre-diabetes</label>
-          <label class="opt"><input type="radio" name="q2" value="sobrepeso"> Tengo sobrepeso y me cuesta bajarlo</label>
-          <label class="opt"><input type="radio" name="q2" value="varios"> Tengo más de una de estas situaciones</label>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span class="step-tag">Pregunta 04 / 06</span>
-        <div class="step-q">¿Cuál es el síntoma que más te molesta hoy?</div>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q3" value="energia"> Falta de energía — me canso rápido o me siento sin fuerza</label>
-          <label class="opt"><input type="radio" name="q3" value="sueno"> Alteración del sueño — no descanso bien o me desvelo</label>
-          <label class="opt"><input type="radio" name="q3" value="sobrepeso"> Sobrepeso — no logro bajar y me siento pesado/a</label>
-          <label class="opt"><input type="radio" name="q3" value="nebulosa"> Me cuesta concentrarme o pensar con claridad</label>
-          <label class="opt"><input type="radio" name="q3" value="ereccion"> Pérdida de vitalidad e impacto en vida íntima</label>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span class="step-tag">Pregunta 05 / 06</span>
-        <div class="step-q">¿Cuál es tu disponibilidad horaria para la videollamada?</div>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q5" value="manana"> Mañanas (9 a 13hs)</label>
-          <label class="opt"><input type="radio" name="q5" value="tarde"> Tardes (14 a 18hs)</label>
-          <label class="opt"><input type="radio" name="q5" value="noche"> Noches (18 a 21hs)</label>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span class="step-tag">Pregunta 06 / 06</span>
-        <div class="step-q">Este es un programa personalizado con seguimiento 1 a 1 durante 12 semanas. ¿En qué rango de inversión te encontrás?</div>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="q4" value="1500-1700"> De USD 1.500 a USD 1.700</label>
-          <label class="opt"><input type="radio" name="q4" value="1000-1499"> De USD 1.000 a USD 1.499</label>
-          <label class="opt"><input type="radio" name="q4" value="600-999"> De USD 600 a USD 999</label>
-          <label class="opt"><input type="radio" name="q4" value="no"> No puedo invertir en este momento</label>
-        </div>
-        <p class="form-footnote">* El costo exacto del programa se confirma en la videollamada de diagnóstico, donde Nina evalúa tu caso de forma personalizada.</p>
-      </div>
-
-      <div class="form-cta">
-        <button class="btn btn-primary" id="form-btn">
-          Agendá tu consulta sin cargo
-        </button>
-        <p class="form-disclaimer">Al continuar, serás redirigido/a a una página de confirmación.<br>Cupos limitados — programa de acceso exclusivo.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- CTA FINAL -->
 <section class="sec-cta">
