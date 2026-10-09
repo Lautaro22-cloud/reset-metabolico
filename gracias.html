@@ -266,11 +266,18 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"/></
     document.getElementById('steps-default').style.display = 'block';
   }
 
+  // Contact una sola vez por visita, con event_id ligado al Lead
+  let contactSent = false;
   function abrirWhatsApp() {
+    if (!contactSent && typeof fbq === 'function') {
+      let base = '';
+      try { base = sessionStorage.getItem('rm_event_id') || ''; } catch (err) {}
+      fbq('track', 'Contact', {}, { eventID: (base || String(Date.now())) + '-contact' });
+      contactSent = true;
+    }
     const texto = 'Hola%20Nina%2C%20complet%C3%A9%20mi%20perfil%20para%20el%20Reset%20Metab%C3%B3lico.%20Quiero%20saber%20si%20el%20programa%20es%20para%20m%C3%AD%2C%20%C2%BFcu%C3%A1ndo%20podemos%20hablar%3F';
     const urlWeb = 'https://wa.me/5492616013554?text=' + texto;
     const urlApp = 'whatsapp://send?phone=5492616013554&text=' + texto;
-    fbq('track', 'Contact');
     setTimeout(function() {
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         window.location.href = urlApp;
