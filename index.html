@@ -1139,6 +1139,26 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       ...utms
     };
 
+    // Datos para Meta: event_id (deduplicación pixel + API de Conversiones) y cookies del pixel
+    const getCookie = n => (document.cookie.match('(^|;)\\s*' + n + '=([^;]*)') || [])[2] || '';
+    const eventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2);
+    const fbclid = params.get('fbclid');
+    data.event_id   = eventId;
+    data.fbp        = getCookie('_fbp');
+    data.fbc        = getCookie('_fbc') || (fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '');
+    data.user_agent = navigator.userAgent;
+    data.page_url   = window.location.href;
+    try { sessionStorage.setItem('rm_event_id', eventId); } catch (err) {}
+
+    // Lead solo para quienes califican; los que no pueden invertir van a un evento aparte
+    if (typeof fbq === 'function') {
+      if (descalifica) {
+        fbq('trackCustom', 'LeadNoCalifica', { inversion: q4val }, { eventID: eventId });
+      } else {
+        fbq('track', 'Lead', { content_name: 'Reset Metabolico', inversion: q4val, perfil: data.q1 }, { eventID: eventId });
+      }
+    }
+
     // Cambiar texto del botón mientras envía
     const btn = document.getElementById('form-btn');
     btn.textContent = 'Enviando...';
@@ -1153,11 +1173,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       body: JSON.stringify(data)
     })
     .then(() => {
-      fbq('track', 'Lead');
       window.location.href = descalifica ? '/no-califica.html' : '/gracias.html';
     })
     .catch(() => {
-      fbq('track', 'Lead');
       window.location.href = descalifica ? '/no-califica.html' : '/gracias.html';
     });
   });
