@@ -234,6 +234,17 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     background: linear-gradient(to right, transparent, rgba(107,143,94,0.25), transparent);
   }
 
+  .paso-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-align: center; margin-bottom: 24px;
+  }
+  .sec-form .paso-label {
+    color: var(--green-light, #5e9454);
+    margin-bottom: 20px;
+  }
+
   /* ── VSL ── */
   .sec-vsl { padding: 60px 0; background: #1e2e1c; }
   .vsl-wrap {
@@ -598,6 +609,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 <!-- VSL -->
 <section class="sec-vsl">
   <div class="container">
+    <div class="paso-label fade-up">Paso 1: Mirá el video</div>
     <div class="vsl-wrap">
       <iframe
         id="vsl-main"
@@ -612,10 +624,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
         <span class="sound-text">Activar sonido</span>
       </div>
     </div>
-    <p class="vsl-caption">En este video te explico exactamente cómo mis pacientes con diabetes tipo 2 normalizaron sus glucemias sin cambiar su medicación en las primeras semanas.</p>
-    <div class="vsl-cta">
-      <a href="#diagnostico" class="btn btn-primary">Quiero que revises mi caso</a>
-    </div>
+    <p class="vsl-caption">En este video te explico cómo trabajo con pacientes con diabetes tipo 2 para mejorar sus análisis, siempre junto a su médico.</p>
   </div>
 </section>
 
@@ -623,8 +632,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
 <section class="sec-form" id="diagnostico">
   <div class="container">
     <div class="form-head fade-up">
-      <div class="sec-label" style="justify-content:center">Pre-calificación</div>
-      <h2>Completá tu perfil<br><em>en pocos pasos.</em></h2>
+      <div class="paso-label">Paso 2: Completá tu perfil en pocos pasos</div>
       <div class="form-friction">
         Este formulario me permite revisar tu caso antes de la llamada y llegar preparada para vos. Son 2 minutos.
       </div>
@@ -750,6 +758,8 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+
+
 
 <!-- CONFLICTO -->
 <section class="sec-conflict">
@@ -901,9 +911,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
         <span class="stat-desc">Adaptado a tu agenda, tus viajes y tus reuniones desde el día uno</span>
       </div>
       <div class="stat-box">
-        <span class="stat-val">Desde las</span>
-        <span class="stat-lbl">primeras semanas</span>
-        <span class="stat-desc">Muchos pacientes notan cambios en energía y descanso</span>
+        <span class="stat-val">En la</span>
+        <span class="stat-lbl">primera semana</span>
+        <span class="stat-desc">La mayoría reporta cambios en energía y sueño antes de los 7 días</span>
       </div>
       <div class="stat-box">
         <span class="stat-val">Solo</span>
@@ -911,12 +921,12 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
         <span class="stat-desc">Cada protocolo se construye desde tus laboratorios, tu historia y tu contexto</span>
       </div>
       <div class="stat-box">
-        <span class="stat-val">Junto a</span>
-        <span class="stat-lbl">tu médico</span>
-        <span class="stat-desc">El plan acompaña tu tratamiento, no lo reemplaza</span>
+        <span class="stat-val">Sin</span>
+        <span class="stat-lbl">medicación de por vida</span>
+        <span class="stat-desc">El objetivo es que tu cuerpo no dependa de lo que hoy necesita para funcionar</span>
       </div>
-    </div>
     <p class="stats-disclaimer fade-up" style="text-align:center;font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;">Resultados individuales. Pueden variar en cada caso.</p>
+    </div>
   </div>
 </section>
 
@@ -953,6 +963,7 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+
 
 <!-- CTA FINAL -->
 <section class="sec-cta">
@@ -1130,6 +1141,26 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       ...utms
     };
 
+    // Datos para Meta: event_id (deduplicación pixel + API de Conversiones) y cookies del pixel
+    const getCookie = n => (document.cookie.match('(^|;)\\s*' + n + '=([^;]*)') || [])[2] || '';
+    const eventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2);
+    const fbclid = params.get('fbclid');
+    data.event_id   = eventId;
+    data.fbp        = getCookie('_fbp');
+    data.fbc        = getCookie('_fbc') || (fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '');
+    data.user_agent = navigator.userAgent;
+    data.page_url   = window.location.href;
+    try { sessionStorage.setItem('rm_event_id', eventId); } catch (err) {}
+
+    // Lead solo para quienes califican; los que no pueden invertir van a un evento aparte
+    if (typeof fbq === 'function') {
+      if (descalifica) {
+        fbq('trackCustom', 'LeadNoCalifica', { inversion: q4val }, { eventID: eventId });
+      } else {
+        fbq('track', 'Lead', { content_name: 'Reset Metabolico', inversion: q4val, perfil: data.q1 }, { eventID: eventId });
+      }
+    }
+
     // Cambiar texto del botón mientras envía
     const btn = document.getElementById('form-btn');
     btn.textContent = 'Enviando...';
@@ -1144,11 +1175,9 @@ src="https://www.facebook.com/tr?id=2371726409991744&ev=PageView&noscript=1"
       body: JSON.stringify(data)
     })
     .then(() => {
-      fbq('track', 'Lead');
       window.location.href = descalifica ? '/no-califica.html' : '/gracias.html';
     })
     .catch(() => {
-      fbq('track', 'Lead');
       window.location.href = descalifica ? '/no-califica.html' : '/gracias.html';
     });
   });
